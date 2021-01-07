@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 1rem;
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: inherit;
+  border: 0;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header Section
+================= */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(192, 192, 192, 0.5);
+}
+
+header .logo img {
+  padding: 0.5rem 0;
+  width: 10rem;
+}
+
+.btn-signin {
+  border: 1px solid silver;
+}
+
+.btn-signin:hover {
+  color: white;
+  background-color: rgba(0, 128, 0, 0.7);
+}
+
+.btn-signup {
+  border: 1px solid silver;
+  border-left: none;
+}
+
+.btn-signup:hover {
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+}
