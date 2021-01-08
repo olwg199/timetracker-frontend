@@ -1,7 +1,7 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  font-family: "Noto Sans KR", serif;
 }
 
 .container {
@@ -12,11 +12,12 @@ body {
 }
 
 .btn {
-  background-color: inherit;
-  border: 0;
+  text-decoration: none;
+  color: #3e5095;
   padding: 0.4rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  font-size: 0.85rem;
 }
 
 /* Header Section
@@ -25,7 +26,7 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid rgba(192, 192, 192, 0.5);
+  border-bottom: 2px solid rgba(126, 182, 195, 0.2);
 }
 
 header .logo img {
@@ -50,4 +51,21 @@ header .logo img {
 .btn-signup:hover {
   color: white;
   background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* Time Range Area
+================== */
+#time-range-area {
+  padding: 0.75rem 0;
+}
+
+.btn-range-item {
+  margin-right: 1rem;
+  border-radius: 50% 20% /10% 40%;
+  background-color: aqua;
+}
+
+.btn-range-item:hover {
+  color: white;
+  background-color: #3e5095;
 }

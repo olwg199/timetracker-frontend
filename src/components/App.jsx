@@ -1,9 +1,13 @@
 import React from "react";
 import Header from "./header/Header";
+import TimeRangeArea from "./timeRangeArea/TimeRangeArea"
 
 function App() {
   return (
-    <Header />
+    <div>
+      <Header />
+      <TimeRangeArea />
+    </div>
   );
 }
 
