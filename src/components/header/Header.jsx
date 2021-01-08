@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../general/Button";
 
 function Header() {
     return (
@@ -8,8 +9,8 @@ function Header() {
                     <img src="./logo.svg" alt="Logo" />
                 </div>
                 <div className="login-area">
-                    <button className="btn btn-signin">Sign In</button>
-                    <button className="btn btn-signup">Sign Up</button>
+                    <Button classList={["btn", "btn-signin"]} text="Sign In"/>
+                    <Button classList={["btn", "btn-signup"]} text="Sign Up"/>
                 </div>
             </div>
         </header>)
