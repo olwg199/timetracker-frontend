@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../general/Button";
 
 function TimeRangeArea() {
-    const ranges = ["Month", "Week", "Day", "Today"]
+    const ranges = ["Year", "Month", "Week", "Today"]
 
     return (
         <section id="time-range-area">
