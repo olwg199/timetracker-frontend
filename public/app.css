@@ -53,8 +53,8 @@ header .logo img {
   background-color: rgba(0, 0, 255, 0.5);
 }
 
-/* Time Range Area
-================== */
+/* Time Range Area Section
+========================== */
 #time-range-area {
   padding: 0.75rem 0;
 }
@@ -69,3 +69,58 @@ header .logo img {
   color: white;
   background-color: #3e5095;
 }
+
+/* Main Area Section
+==================== */
+#main-area {
+  margin-top: 1rem;
+}
+
+#main-area .row{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#main-area .month {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid rgba(126, 182, 195, 0.2);
+  flex-grow: 1;
+  height: 15rem;
+}
+
+#main-area .row .month:last-child {
+  margin-right: 0;
+}
+
+/* Month View
+============= */
+.month table {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+.month table caption {
+  padding: 0.4rem 0;
+  border-radius: 5px 5px 0 0;
+  background-color: #3e5095;
+  color: white;
+  width: 100%;
+}
+
+.month table th{
+  background-color: aqua;
+  font-weight: 400;
+}
+
+.month table td{
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding: 0.2rem 0;
+  /* background-color: rgba(0, 128, 0, 0.5); */
+  border-radius: 50%;
+}
+
