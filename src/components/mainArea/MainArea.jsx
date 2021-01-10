@@ -2,14 +2,13 @@ import React from "react";
 import YearView from "./YearView"
 
 function MainArea(props) {
-    const todayDate = new Date();
-    const { veiw = todayDate.toLocaleString('en-US', {month: 'long'}) } = props;
+    const { viewTitle } = props;
 
     return (
         <section id="main-area">
             <div className="container">
                 <div className="main-area-title">
-                    <span>{veiw}</span>
+                    <span>{viewTitle}</span>
                 </div>
 
                 <YearView />

@@ -4,11 +4,13 @@ import TimeRangeArea from "./timeRangeArea/TimeRangeArea"
 import MainArea from "./mainArea/MainArea"
 
 function App() {
+  const todayDate = new Date();
+
   return (
     <div>
       <Header />
       <TimeRangeArea />
-      <MainArea />
+      <MainArea viewTitle={todayDate.getFullYear()}/>
     </div>
   );
 }
