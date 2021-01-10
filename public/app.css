@@ -1,6 +1,7 @@
 html,
 body {
   margin: 0;
+  padding: 0;
   font-family: "Noto Sans KR", serif;
 }
 
@@ -56,7 +57,7 @@ header .logo img {
 /* Time Range Area Section
 ========================== */
 #time-range-area {
-  padding: 0.75rem 0;
+  padding: 0.75rem 0 0 0;
 }
 
 .btn-range-item {
@@ -73,23 +74,26 @@ header .logo img {
 /* Main Area Section
 ==================== */
 #main-area {
-  margin-top: 1rem;
+}
+
+.main-area-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 0.6rem 0;
+  font-size: 1.5rem;
+  border: 1px solid silver;
 }
 
 #main-area .row{
   display: flex;
   width: 100%;
+  margin-bottom: 1rem;
   justify-content: space-between;
 }
 
-#main-area .month {
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
-  border-radius: 5px 5px 0 0;
-  border: 1px solid rgba(126, 182, 195, 0.2);
-  flex-grow: 1;
-  height: 15rem;
+#main-area .row:last-child {
+  margin-bottom: 0;
 }
 
 #main-area .row .month:last-child {
@@ -98,11 +102,20 @@ header .logo img {
 
 /* Month View
 ============= */
+#main-area .month {
+  margin-right: 1rem;
+  box-sizing: border-box;
+  flex: 1;
+}
+
 .month table {
   table-layout: fixed;
   width: 100%;
   text-align: center;
+  border: 1px solid rgba(126, 182, 195, 0.2);
+  border-top: none;
 }
+
 .month table caption {
   padding: 0.4rem 0;
   border-radius: 5px 5px 0 0;
@@ -112,6 +125,7 @@ header .logo img {
 }
 
 .month table th{
+  padding: 0;
   background-color: aqua;
   font-weight: 400;
 }

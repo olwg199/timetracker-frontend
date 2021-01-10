@@ -1,29 +1,23 @@
 import React from "react";
 import Month from "../general/Month";
 
-function MonthView() {
+function YearView() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
 
-    return (
-        <div className="container">
-            {
-                generateYearViewStructure(monthNames, 4)
-            }
-        </div>
-
-    );
+    return generateYearViewStructure(monthNames);
+    
 }
 
 function generateYearViewStructure(months, itemInRow = 4) {
 
     return months.reduce(function (acc, month, index, arr) {
-        acc.Quarter.push(<Month month={month} />);
+        acc.Quarter.push(<Month month={month} key={index} />);
 
         //Logic of devading months into rows views.
         if ((index + 1) % itemInRow === 0 && index !== 0) {
             acc.Year.push(
-                <div className="row">
+                <div className="row" key={acc.Year.length + 1}>
                     {acc.Quarter}
                 </div>
             );
@@ -41,4 +35,4 @@ function generateYearViewStructure(months, itemInRow = 4) {
 
 }
 
-export default MonthView;
+export default YearView;

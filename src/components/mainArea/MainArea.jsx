@@ -1,10 +1,19 @@
 import React from "react";
-import MonthView from "./YearView"
+import YearView from "./YearView"
 
 function MainArea(props) {
+    const todayDate = new Date();
+    const { veiw = todayDate.toLocaleString('en-US', {month: 'long'}) } = props;
+
     return (
         <section id="main-area">
-                <MonthView />
+            <div className="container">
+                <div className="main-area-title">
+                    <span>{veiw}</span>
+                </div>
+
+                <YearView />
+            </div>
         </section>
     );
 }
