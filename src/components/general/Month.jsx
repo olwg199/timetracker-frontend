@@ -1,10 +1,11 @@
 import React from "react";
 
-function Month(props){
+function Month(props) {
+
     return (
         <div className="month">
             <table>
-                <caption>{props.month}</caption>
+                <caption>{props.month.name}</caption>
                 <thead>
                     <tr>
                         <th>S</th>
@@ -17,7 +18,8 @@ function Month(props){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {generateMonthViewStructure(props.month)}
+                    {/* <tr>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -64,17 +66,30 @@ function Month(props){
                     </tr>
                     <tr>
                         <td>31</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </div>
     )
+}
+
+function generateMonthViewStructure(month, cellsInRow = 7) {
+    let structure = { tr: [], td: [] };
+
+    for (let i = 0; i < 5; i++) {
+        structure.td.push(<td></td>)
+    }
+
+    for (let i = 0; i < month.amountOfDays; i++) {
+        if (structure.td.length % 7 === 0) {
+            structure.tr.push(<tr>{[...structure.td]}</tr>)
+            structure.td = [];
+        }
+        structure.td.push(<td>{i + 1}</td>);
+    }
+
+    structure.tr.push(<tr>{[...structure.td]}</tr>);
+    return structure.tr;
 }
 
 export default Month;

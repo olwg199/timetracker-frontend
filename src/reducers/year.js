@@ -1,31 +1,51 @@
-class Goal {
-    goal(){
-        this.description = "";
-        this.startTime = "";
-        this.endTime = "";
-        this.timeSpent = "";
-        this.isAchived = false;
-    }
-}
-
 const initialState = {
     january: {
-        1: [new Goal(), new Goal()],
-        2: [new Goal(), new Goal()]
-    }
+        name: "January",
+        firstWeekday: "friday",
+        amountOfDays: 31,
+        1: {
+            isAchived: false,
+            goalsAmount: 3
+        },
+        2: {
+            isAchived: true,
+            goalsAmount: 2
+        }
+    },
+    february: {
+        name: "February",
+        5: {
+            isAchived: true,
+            goalsAmount: 4
+        }
+    },
+    march: {},
+    april: {},
+    may: {},
+    june: {},
+    july: {},
+    august: {
+        name: "August",
+        5: {
+            isAchived: false,
+            goalsAmount: 1
+        }
+    },
+    september: {},
+    october: {},
+    november: {},
+    december: {}
 };
 
 
 
 const yearReducer = (state = initialState, action) => {
-    switch (action.type) {
+    const { type } = action
+    switch (type) {
         default:
-            return state;
+            return initialState;
     };
 };
 
-// buildInitialState(userId, year) {
-
-// }
 
 export default yearReducer;

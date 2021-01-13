@@ -1,18 +1,25 @@
 import React from "react";
 import Month from "../general/Month";
+import { useSelector } from "react-redux";
 
 function YearView() {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"];
+    const year = useSelector(state => state.year);
+    console.log(year)
+    // const monthNames = ["January", "February", "March", "April", "May", "June",
+    //     "July", "August", "September", "October", "November", "December"];
 
-    return generateYearViewStructure(monthNames);
+    
+
+
+    return generateYearViewStructure(year);
     
 }
 
-function generateYearViewStructure(months, itemInRow = 4) {
+function generateYearViewStructure(year, itemInRow = 4) {
+    const months = Object.keys(year);
 
     return months.reduce(function (acc, month, index, arr) {
-        acc.Quarter.push(<Month month={month} key={index} />);
+        acc.Quarter.push(<Month month={year.[month]} key={index} />);
 
         //Logic of devading months into rows views.
         if ((index + 1) % itemInRow === 0 && index !== 0) {
