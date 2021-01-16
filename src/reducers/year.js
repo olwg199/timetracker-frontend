@@ -4,11 +4,11 @@ const initialState = {
         firstWeekday: "friday",
         amountOfDays: 31,
         1: {
-            isAchived: false,
+            isAchieved: false,
             goalsAmount: 3
         },
         2: {
-            isAchived: true,
+            isAchieved: true,
             goalsAmount: 2
         }
     },
@@ -18,7 +18,7 @@ const initialState = {
         firstWeekday: "monday",
         amountOfDays: 28,
         5: {
-            isAchived: true,
+            isAchieved: true,
             goalsAmount: 4
         }
     },
@@ -58,7 +58,7 @@ const initialState = {
         firstWeekday: "sunday",
         amountOfDays: 31,
         5: {
-            isAchived: false,
+            isAchieved: false,
             goalsAmount: 1
         }
     },
