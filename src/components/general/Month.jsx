@@ -1,4 +1,5 @@
 import React from "react";
+import DateHelper from "../../helpers/dateHelper";
 
 function Month(props) {
 
@@ -29,35 +30,25 @@ function generateMonthViewStructure(month, cellsInRow = 7) {
     let structure = { tr: [], td: [] };
 
     //Shift cells of table to match first day of the month with column named as first day of the month.
-    for (let i = 0; i < getDayNumberByName(month.firstWeekday); i++) {
-        structure.td.push(<td></td>)
+    //If row needs to be shifted by it's length - just don't shift it.
+    if (DateHelper.getDayNumberByName(month.firstWeekday) !== cellsInRow) {
+        for (let i = 0; i < DateHelper.getDayNumberByName(month.firstWeekday); i++) {
+            structure.td.push(<td key={i}></td>)
+        }
     }
 
     //Add structure of the month based on amount of days
     for (let i = 0; i < month.amountOfDays; i++) {
-        if (structure.td.length % 7 === 0) {
-            structure.tr.push(<tr>{[...structure.td]}</tr>)
+        if (structure.td.length % 7 === 0 && structure.td.length !== 0) {
+            structure.tr.push(<tr key={structure.tr.length + 1}>{[...structure.td]}</tr>)
             structure.td = [];
         }
-        structure.td.push(<td>{i + 1}</td>);
+        structure.td.push(<td key={structure.td.length + 1}>{i + 1}</td>);
     }
 
-    structure.tr.push(<tr>{[...structure.td]}</tr>);
+    //Always push last row to the month structure
+    structure.tr.push(<tr key={structure.tr.length + 1}>{[...structure.td]}</tr>);
     return structure.tr;
-}
-
-function getDayNumberByName(monthName) {
-    const months = {
-        monday: 1,
-        tuesday: 2,
-        wednesday: 3,
-        thursday: 4,
-        friday: 5,
-        saturday: 6,
-        sunday: 7
-    }
-
-    return months.[monthName];
 }
 
 export default Month;

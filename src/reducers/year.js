@@ -77,7 +77,7 @@ const initialState = {
 
     november: {
         name: "November",
-        firstWeekday: "munday",
+        firstWeekday: "monday",
         amountOfDays: 30
     },
 
