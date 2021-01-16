@@ -108,6 +108,7 @@ header .logo img {
 #main-area .month {
   margin-right: 1rem;
   box-sizing: border-box;
+  height: 100%;
   flex: 1;
 }
 
@@ -115,7 +116,7 @@ header .logo img {
   table-layout: fixed;
   width: 100%;
   text-align: center;
-  border: 1px solid rgba(126, 182, 195, 0.2);
+  
   border-top: none;
 }
 
@@ -137,6 +138,17 @@ header .logo img {
   font-weight: 400;
   font-size: 0.8rem;
   padding: 0.2rem 0;
-  /* background-color: rgba(0, 128, 0, 0.3); */
-  border-radius: 50%;
+  cursor: pointer;
+}
+
+.month table td:hover {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
+.month table td.achieved{
+  background-color: rgba(0, 128, 0, 0.3);
+}
+
+.month table td.not-achieved{
+  background-color:rgba(255, 0, 0, 0.5);
 }

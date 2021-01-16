@@ -3,11 +3,11 @@ const initialState = {
         name: "January",
         firstWeekday: "friday",
         amountOfDays: 31,
-        1: {
+        d1: {
             isAchieved: false,
             goalsAmount: 3
         },
-        2: {
+        d2: {
             isAchieved: true,
             goalsAmount: 2
         }
@@ -17,7 +17,7 @@ const initialState = {
         name: "February",
         firstWeekday: "monday",
         amountOfDays: 28,
-        5: {
+        d5: {
             isAchieved: true,
             goalsAmount: 4
         }
@@ -57,7 +57,7 @@ const initialState = {
         name: "August",
         firstWeekday: "sunday",
         amountOfDays: 31,
-        5: {
+        d5: {
             isAchieved: false,
             goalsAmount: 1
         }

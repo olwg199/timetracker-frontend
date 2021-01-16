@@ -39,11 +39,21 @@ function generateMonthViewStructure(month, cellsInRow = 7) {
 
     //Add structure of the month based on amount of days
     for (let i = 0; i < month.amountOfDays; i++) {
-        if (structure.td.length % 7 === 0 && structure.td.length !== 0) {
+        if (structure.td.length % cellsInRow === 0 && structure.td.length !== 0) {
             structure.tr.push(<tr key={structure.tr.length + 1}>{[...structure.td]}</tr>)
             structure.td = [];
         }
-        structure.td.push(<td key={structure.td.length + 1}>{i + 1}</td>);
+
+        //Check if any data for day exists
+        if (month.["d" + (i + 1)]) {
+            structure.td.push(
+                <td className={month.["d" + (i + 1)].isAchieved ? "achieved" : "not-achieved"} key={structure.td.length + 1}>{i + 1}</td>
+            )
+        } else {
+            structure.td.push(
+                <td key={structure.td.length + 1}>{i + 1}</td>
+            )
+        }
     }
 
     //Always push last row to the month structure
