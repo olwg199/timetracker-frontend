@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function YearView() {
     const year = useSelector(state => state.year);
-    console.log(year)
     // const monthNames = ["January", "February", "March", "April", "May", "June",
     //     "July", "August", "September", "October", "November", "December"];
 

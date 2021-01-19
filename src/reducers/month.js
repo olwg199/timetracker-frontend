@@ -1,12 +1,12 @@
 const initialState = {
     name: "january",
-    firstWeekday: "",
+    firstWeekday: "friday",
     amountOfDays: 31,
-    1: {
+    d1: {
         isAchived: false,
         goalsAmount: 3
     },
-    2: {
+    d2: {
         isAchived: true,
         goalsAmount: 2
     }
