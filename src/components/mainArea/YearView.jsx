@@ -1,17 +1,18 @@
 import React from "react";
 import Month from "../general/Month";
 import { useSelector } from "react-redux";
+import MainAreaTitle from "../general/MainAreaTitle";
 
-function YearView() {
+function YearView(props) {
     const year = useSelector(state => state.year);
-    // const monthNames = ["January", "February", "March", "April", "May", "June",
-    //     "July", "August", "September", "October", "November", "December"];
 
-    
+    return (
+        <div className="year-view">
+            <MainAreaTitle title={props.title} />
+            {generateYearViewStructure(year)}
+        </div>
+    );
 
-
-    return generateYearViewStructure(year);
-    
 }
 
 function generateYearViewStructure(year, itemInRow = 4) {

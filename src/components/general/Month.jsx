@@ -2,7 +2,6 @@ import React from "react";
 import DateHelper from "../../helpers/dateHelper";
 
 function Month(props) {
-
     return (
         <div className="month">
             <table>

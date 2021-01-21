@@ -1,41 +1,31 @@
 import React from "react";
 import YearView from "./YearView"
 import TimeRangeButtons from "./TimeRangeButtons"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Month from "../general/Month"
-import { useSelector } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import MonthView from "./MonthView"
 
 function MainArea(props) {
     const todayDate = new Date();
-    const month = useSelector(state => state.month);
+    
 
     return (
-        <Router>
-            <section id="main-area">
-                <TimeRangeButtons />
+        <section id="main-area">
+            <TimeRangeButtons />
 
 
-                <div className="container">
+            <div className="container">
+                <Switch>
+                    <Route path={["/", "/year"]} exact>
+                        <YearView title={todayDate.getFullYear()}/>
+                    </Route>
 
-                    <Switch>
-                        <Route path={["/", "/year"]} exact>
-                            <div className="main-area-title">
-                                <span>{todayDate.getFullYear()}</span>
-                            </div>
-                            <YearView />
-                        </Route>
+                    <Route path="/month">
+                        <MonthView title={todayDate.toLocaleDateString("en-US", { month: 'long' })} />
+                    </Route>
+                </Switch>
+            </div>
 
-                        <Route path="/month">
-                            <div className="main-area-title">
-                                <span>{todayDate.toLocaleDateString("en-US", { month: 'long' })}</span>
-                            </div>
-                            <Month month={month} />
-                        </Route>
-                    </Switch>
-                </div>
-
-            </section>
-        </Router>
+        </section>
 
     );
 }

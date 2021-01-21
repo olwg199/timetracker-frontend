@@ -4,6 +4,7 @@ import MainArea from "./mainArea/MainArea"
 import { createStore } from "redux";
 import Reducers from "../reducers";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const store = createStore(
   Reducers
@@ -12,8 +13,10 @@ const store = createStore(
 function App() {
   return (
     <Provider store={store}>
-      <Header />
-      <MainArea />
+      <Router>
+        <Header />
+        <MainArea />
+      </Router>
     </Provider>
   );
 }
