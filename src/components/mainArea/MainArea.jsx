@@ -18,17 +18,16 @@ function MainArea(props) {
                 <div className="container">
 
                     <Switch>
-                        <Route path="/year" exact>
+                        <Route path={["/", "/year"]} exact>
                             <div className="main-area-title">
                                 <span>{todayDate.getFullYear()}</span>
                             </div>
-
                             <YearView />
                         </Route>
 
                         <Route path="/month">
-                        <div className="main-area-title">
-                                <span>{todayDate.toLocaleDateString("en-US", {month: 'long'})}</span>
+                            <div className="main-area-title">
+                                <span>{todayDate.toLocaleDateString("en-US", { month: 'long' })}</span>
                             </div>
                             <Month month={month} />
                         </Route>
