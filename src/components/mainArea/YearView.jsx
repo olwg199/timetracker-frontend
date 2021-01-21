@@ -1,14 +1,12 @@
 import React from "react";
 import Month from "../general/Month";
 import { useSelector } from "react-redux";
-import MainAreaTitle from "../general/MainAreaTitle";
 
 function YearView(props) {
     const year = useSelector(state => state.year);
 
     return (
         <div className="year-view">
-            <MainAreaTitle title={props.title} />
             {generateYearViewStructure(year)}
         </div>
     );
