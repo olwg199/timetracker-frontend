@@ -99,12 +99,11 @@ header .logo img {
   margin-right: 0;
 }
 
-/* Month View
+/* Month Styles
 ============= */
-#main-area .month {
+.month {
   margin-right: 1rem;
   box-sizing: border-box;
-  height: 100%;
   flex: 1;
 }
 
@@ -145,4 +144,19 @@ header .logo img {
 
 .month table td.not-achieved{
   background-color:rgba(255, 0, 0, 0.5);
+}
+
+
+/* MonthView section
+==================== */
+.month-view .month {
+  height: 600px;
+}
+
+.month-view .month table{
+  height: 100%;
+}
+
+.month-view .month table td, .month-view .month table th{
+  font-size: 1.5rem;
 }

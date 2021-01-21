@@ -1,5 +1,5 @@
 const initialState = {
-    name: "january",
+    name: "January",
     firstWeekday: "friday",
     amountOfDays: 31,
     d1: {
