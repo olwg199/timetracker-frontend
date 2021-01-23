@@ -138,14 +138,13 @@ header .logo img {
   background-color: rgba(0, 255, 255, 0.5);
 }
 
-.month table td.achieved{
+.month table td.achieved {
   background-color: rgba(0, 128, 0, 0.3);
 }
 
-.month table td.not-achieved{
-  background-color:rgba(255, 0, 0, 0.5);
+.month table td.not-achieved {
+  background-color: rgba(255, 0, 0, 0.5);
 }
-
 
 /* MonthView section
 ==================== */
@@ -153,10 +152,82 @@ header .logo img {
   height: 600px;
 }
 
-.month-view .month table{
+.month-view .month table {
   height: 100%;
 }
 
-.month-view .month table td, .month-view .month table th{
+.month-view .month table td,
+.month-view .month table th {
   font-size: 1.5rem;
 }
+
+/* Week View section
+==================== */
+.week-view .days {
+  display: flex;
+  justify-content: space-between;
+}
+
+.week-view .day {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.week-view .day:first-child {
+}
+
+.week-view .day .title {
+  text-align: center;
+  background-color: #3e5095;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.week-view .day:last-child .title{
+  border-right: none;
+}
+
+.week-view .day:first-child .title{
+  border-left: none;
+}
+
+.week-view .day .todo-list {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid silver;
+}
+
+.week-view .day .todo-list .todo-list-item {
+  display: flex;
+  padding: 0.3rem 0 0.3rem 0.3rem;
+  align-items: center;
+  border-bottom: 1px solid silver;
+}
+
+.week-view .day .todo-list .todo-list-item:last-child {
+  border-bottom: none;
+}
+
+.week-view .day .todo-list .todo-list-item:hover {
+  background-color: rgba(0, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.week-view .day .todo-list .todo-list-item .description {
+  flex:1;
+}
+
+.week-view .day .todo-list .todo-list-item .action-buttons i{
+  margin: 0 0.2rem;
+}
+
+.week-view .day .todo-list .todo-list-item .action-buttons i:hover{
+  color: #3e5095;
+}
+
+
