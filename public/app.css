@@ -186,14 +186,13 @@ header .logo img {
   border-left: 1px solid white;
 }
 
-.week-view .day:last-child .title{
+.week-view .day:last-child .title {
   border-right: none;
 }
 
-.week-view .day:first-child .title{
+.week-view .day:first-child .title {
   border-left: none;
 }
-
 
 /* TODO list component
 ====================== */
@@ -223,15 +222,37 @@ header .logo img {
 }
 
 .todo-list .todo-list-item .description {
-  flex:1;
+  flex: 1;
 }
 
-.todo-list .todo-list-item .action-buttons i{
+.todo-list .todo-list-item .action-buttons i {
   margin: 0 0.2rem;
 }
 
-.todo-list .todo-list-item .action-buttons i:hover{
+.todo-list .todo-list-item .action-buttons i:hover {
   color: #3e5095;
 }
 
+/* Add button
+============= */
 
+.add-button {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: #3e5095;
+  background-color: rgba(0, 255, 255, 1);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.add-button:hover {
+  background-color: #3e5095;
+  color: white;
+}
