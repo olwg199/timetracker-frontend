@@ -14,7 +14,7 @@ function Week(props) {
 function generateWeekStructure(dayNames) {
     return dayNames.map((dayName, index) => {
         return (
-            <div className="day">
+            <div className="day" key={index}>
                 <div className="title">
                     {dayName}
                 </div>

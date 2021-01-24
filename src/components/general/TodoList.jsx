@@ -20,7 +20,7 @@ function generateTodoListStructure(todoList) {
     return (
         <ul className="todo-list">
             {todoList.map((item, index) => (
-                <li className="todo-list-item">
+                <li className="todo-list-item" key={index}>
                     <div className="description">
                         {item.description}
                     </div>
@@ -28,7 +28,7 @@ function generateTodoListStructure(todoList) {
                         {item.timeSpent}
                     </div>
                     <div className="action-buttons">
-                        <i class="fas fa-trash-alt"></i>
+                        <i className="fas fa-trash-alt"></i>
                     </div>
                 </li>
             ))}
