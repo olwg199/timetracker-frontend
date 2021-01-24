@@ -4,11 +4,11 @@ function TodoList(props) {
     const mockTodoList = [
         {
             description: "Hello World!",
-            spentTime: 23
+            timeSpent: 23
         },
         {
             description: "Lorem ipsum  sit amet",
-            spentTime: 23
+            timeSpent: 23
         }
     ]
 
@@ -22,8 +22,11 @@ function generateTodoListStructure(todoList) {
             {todoList.map((item, index) => (
                 <li className="todo-list-item">
                     <div className="description">
-                        Lorem ipsum dolor  amet
-                                </div>
+                        {item.description}
+                    </div>
+                    <div className="time">
+                        {item.timeSpent}
+                    </div>
                     <div className="action-buttons">
                         <i class="fas fa-trash-alt"></i>
                     </div>

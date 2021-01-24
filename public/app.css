@@ -194,7 +194,11 @@ header .logo img {
   border-left: none;
 }
 
-.week-view .day .todo-list {
+
+/* TODO list component
+====================== */
+
+.todo-list {
   font-size: 0.9rem;
   padding: 0;
   margin: 0;
@@ -202,31 +206,31 @@ header .logo img {
   border: 1px solid silver;
 }
 
-.week-view .day .todo-list .todo-list-item {
+.todo-list .todo-list-item {
   display: flex;
   padding: 0.3rem 0 0.3rem 0.3rem;
   align-items: center;
   border-bottom: 1px solid silver;
 }
 
-.week-view .day .todo-list .todo-list-item:last-child {
+.todo-list .todo-list-item:last-child {
   border-bottom: none;
 }
 
-.week-view .day .todo-list .todo-list-item:hover {
+.todo-list .todo-list-item:hover {
   background-color: rgba(0, 255, 255, 0.5);
   cursor: pointer;
 }
 
-.week-view .day .todo-list .todo-list-item .description {
+.todo-list .todo-list-item .description {
   flex:1;
 }
 
-.week-view .day .todo-list .todo-list-item .action-buttons i{
+.todo-list .todo-list-item .action-buttons i{
   margin: 0 0.2rem;
 }
 
-.week-view .day .todo-list .todo-list-item .action-buttons i:hover{
+.todo-list .todo-list-item .action-buttons i:hover{
   color: #3e5095;
 }
 

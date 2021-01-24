@@ -1,8 +1,11 @@
 import React from "react";
+import TodoList from "./TodoList";
 
-function Day(props){
-    return(
-        <p>"Day view"</p>
+function Day(props) {
+    return (
+        <div className="exact-day">
+            <TodoList />
+        </div>
     );
 }
 
