@@ -6,6 +6,7 @@ import MonthView from "./MonthView"
 import WeekView from "./WeekView";
 import MainAreaTitle from "../general/MainAreaTitle"
 import DayView from "./DayView";
+import AddTaskView from "./AddTaskView";
 
 function MainArea(props) {
     const todayDate = new Date();
@@ -36,7 +37,7 @@ function MainArea(props) {
                     </Route>
 
                     <Route path="/add">
-                        <DayView />
+                        <AddTaskView />
                     </Route>
                 </Switch>
             </div>
