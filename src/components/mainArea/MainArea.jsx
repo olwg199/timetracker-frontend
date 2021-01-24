@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import MonthView from "./MonthView"
 import WeekView from "./WeekView";
 import MainAreaTitle from "../general/MainAreaTitle"
+import DayView from "./DayView";
 
 function MainArea(props) {
     const todayDate = new Date();
@@ -28,6 +29,10 @@ function MainArea(props) {
 
                     <Route path="/week">
                         <WeekView />
+                    </Route>
+
+                    <Route path="/today">
+                        <DayView />
                     </Route>
                 </Switch>
             </div>
