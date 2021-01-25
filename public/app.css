@@ -75,6 +75,17 @@ header .logo img {
 #main-area {
 }
 
+a.active {
+  background-color: #3e5095;
+  color: white;
+  border-color: #3e5095;
+}
+
+a.active:hover {
+  color: black;
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
 .main-area-title {
   text-transform: uppercase;
   letter-spacing: 0.1rem;

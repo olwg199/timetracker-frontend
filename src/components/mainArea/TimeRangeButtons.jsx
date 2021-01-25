@@ -1,18 +1,22 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setCurrentView } from "../../actions";
 import Button from "../general/Button";
 
 function TimeRangeButtons() {
-    const dispatch = useDispatch();
+    const currentView = loadCurrentViewToLocalStorage().toLowerCase();
     const ranges = ["Year", "Month", "Week", "Today"]
 
 
     React.useEffect(() => {
         const buttons = document.querySelectorAll(".btn-range-item");
         for (let btn of buttons) {
+            const btnText = btn.text.toLowerCase();
+            if(btnText === currentView){
+                btn.classList.add('active')
+            }
+
             btn.addEventListener("click", (event) => {
-                dispatch(setCurrentView(event.target.text));
+                console.log(event.target.text)
+                saveCurrentViewToLocalStorage(event.target.text);
             })
         }
     });
@@ -28,5 +32,24 @@ function TimeRangeButtons() {
     );
 }
 
+function saveCurrentViewToLocalStorage(currentView){
+    try {
+        const serializedState = JSON.stringify(currentView);
+        localStorage.setItem("currentView", serializedState);
+    } catch(e) {
+        console.log(e);
+    }
+}
+
+function loadCurrentViewToLocalStorage(){
+    try {
+         const serializedState = localStorage.getItem("currentView");
+         if(serializedState === null ) return undefined;
+         return JSON.parse(serializedState);
+    } catch(e) {
+        console.log(e);
+        return undefined;
+    }
+}
 
 export default TimeRangeButtons;
