@@ -6,6 +6,7 @@ import Reducers from "../reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import AddButton from "./general/AddButton";
+import AddTaskView from "./mainArea/AddTaskView";
 
 const store = createStore(
   Reducers,
@@ -18,6 +19,7 @@ function App() {
       <Router>
         <Header />
         <MainArea />
+        <AddTaskView />
         <AddButton />
       </Router>
     </Provider>

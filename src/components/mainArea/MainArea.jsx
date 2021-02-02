@@ -35,10 +35,6 @@ function MainArea(props) {
                     <Route path="/today">
                         <DayView />
                     </Route>
-
-                    <Route path="/add">
-                        <AddTaskView />
-                    </Route>
                 </Switch>
             </div>
 
