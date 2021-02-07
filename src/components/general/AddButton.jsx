@@ -1,16 +1,17 @@
 import React from "react";
 
 function AddButton() {
-    function activateAddView(e){
-        e.preventDefault();
-        document.querySelector(".add-task").classList.remove("disabled");
-    }
 
-    return (
-        <a href="/" className="add-button" onClick={activateAddView}>
-            <i className="fas fa-plus"></i>
-        </a>
-    )
+  return (
+    <button
+      type="button"
+      class="btn add-button"
+      data-bs-toggle="modal"
+      data-bs-target="#addTask"
+    >
+      <i className="fas fa-plus"></i>
+    </button>
+  );
 }
 
 export default AddButton;
