@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentView } from "../../actions";
 import Button from "../general/Button";
 
 function TimeRangeButtons() {
-    const currentView = loadCurrentViewToLocalStorage().toLowerCase();
+    const currentView = useSelector(state => state.currentView);
+    const dispatch = useDispatch();
     const ranges = ["Year", "Month", "Week", "Today"]
 
 
@@ -16,7 +19,7 @@ function TimeRangeButtons() {
 
             btn.addEventListener("click", (event) => {
                 console.log(event.target.text)
-                saveCurrentViewToLocalStorage(event.target.text);
+                dispatch(setCurrentView(event.target.text));
             })
         }
     });
@@ -30,26 +33,6 @@ function TimeRangeButtons() {
             </div>
         </section>
     );
-}
-
-function saveCurrentViewToLocalStorage(currentView){
-    try {
-        const serializedState = JSON.stringify(currentView);
-        localStorage.setItem("currentView", serializedState);
-    } catch(e) {
-        console.log(e);
-    }
-}
-
-function loadCurrentViewToLocalStorage(){
-    try {
-         const serializedState = localStorage.getItem("currentView");
-         if(serializedState === null ) return undefined;
-         return JSON.parse(serializedState);
-    } catch(e) {
-        console.log(e);
-        return undefined;
-    }
 }
 
 export default TimeRangeButtons;

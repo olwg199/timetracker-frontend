@@ -7,7 +7,7 @@ function AddButton() {
     }
 
     return (
-        <a href="" className="add-button" onClick={activateAddView}>
+        <a href="/" className="add-button" onClick={activateAddView}>
             <i className="fas fa-plus"></i>
         </a>
     )
