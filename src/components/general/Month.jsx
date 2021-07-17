@@ -4,8 +4,8 @@ import DateHelper from "../../helpers/dateHelper";
 function Month(props) {
     return (
         <div className="month">
+        <div className="month-title"> {props.month.name}</div>
             <table>
-                <caption>{props.month.name}</caption>
                 <thead>
                     <tr>
                         <th>S</th>
