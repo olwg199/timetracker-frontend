@@ -10,6 +10,7 @@ const currentViewReducer = (state = initialState, action) => {
         }
         default:{
             initialState = loadCurrentViewFromLocalStorage();
+            
             return initialState;
         }
     };
@@ -27,11 +28,11 @@ function saveCurrentViewToLocalStorage(currentView){
 function loadCurrentViewFromLocalStorage(){
     try {
          const serializedState = localStorage.getItem("currentView");
-         if(serializedState === null ) return undefined;
+         if(serializedState === null ) return initialState;
          return JSON.parse(serializedState);
     } catch(e) {
         console.log(e);
-        return undefined;
+        return initialState;
     }
 }
 
