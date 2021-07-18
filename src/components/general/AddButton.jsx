@@ -5,7 +5,7 @@ function AddButton() {
   return (
     <button
       type="button"
-      class="btn add-button"
+      className="btn add-button"
       data-bs-toggle="modal"
       data-bs-target="#addTask"
     >

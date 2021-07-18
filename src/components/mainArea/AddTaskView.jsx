@@ -3,73 +3,73 @@ import React from "react";
 function AddTaskView(props) {
   return (
     <div
-      class="modal fade"
+    className="modal fade"
       id="addTask"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="exampleModalLabel">
               Add Task
             </h5>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
           <form>
-            <div class="modal-body">
+            <div className="modal-body">
               <div className="input-group mb-3">
-                <label for="new-task-title" class="input-group-text">
+                <label htmlFor="new-task-title" className="input-group-text">
                   Title
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="new-task-title"
                 ></input>
               </div>
 
               <div className="input-group mb-3">
-                <label for="new-task-start" class="input-group-text">
+                <label htmlFor="new-task-start" className="input-group-text">
                   Start
                 </label>
                 <input
                   type="date"
-                  class="form-control"
+                  className="form-control"
                   id="new-task-start"
                 ></input>
 
                 <input
                   type="date"
-                  class="form-control"
+                  className="form-control"
                   id="new-task-end"
                 ></input>
-                <label for="new-task-end" class="input-group-text">
+                <label htmlFor="new-task-end" className="input-group-text">
                   End
                 </label>
               </div>
 
               <div className="input-group mb-3">
-                <label for="new-task-title" class="input-group-text">
+                <label htmlFor="new-task-title" className="input-group-text">
                   Spend
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="new-task-title"
                 ></input>
 
-                <span class="input-group-text" id="addon-wrapping">
+                <span className="input-group-text" id="addon-wrapping">
                   minutes per
                 </span>
-                <select class="form-select" aria-label="Time range selector">
-                  <option value="1" selected>
+                <select className="form-select" aria-label="Time range selector">
+                  <option value="1" defaultValue>
                     day
                   </option>
                   <option value="2">week</option>
@@ -79,18 +79,18 @@ function AddTaskView(props) {
               </div>
 
               <div className="input-group">
-                <label for="new-task-desc" class="input-group-text">
+                <label htmlFor="new-task-desc" className="input-group-text">
                   Description
                 </label>
                 <textarea
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="new-task-desc"
                 ></textarea>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-outline-primary">
+            <div className="modal-footer">
+              <button type="submit" className="btn btn-outline-primary">
                 Add
               </button>
             </div>

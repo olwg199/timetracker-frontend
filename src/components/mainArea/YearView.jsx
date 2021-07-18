@@ -22,7 +22,7 @@ function generateYearViewStructure(year, itemInRow = 4) {
         //Logic of devading months into rows views.
         if ((index + 1) % itemInRow === 0 && index !== 0) {
             acc.Year.push(
-                <div className="row" key={acc.Year.length + 1}>
+                <div className="cust-row" key={acc.Year.length + 1}>
                     {acc.Quarter}
                 </div>
             );
