@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 function AddTaskView(props) {
 
   const [task, updateTask] = useState({ title: "", startDate: "", endDate: "", time: 0, description: "" });
 
   function sendDataToApi(e) {
-    e.preventDefault();
-    console.dir(e);
-    axios.post("https://timetracker-api-node.herokuapp.com/tasks", task)
-      .then(result => {
-        console.log(result);
-        document.getElementById("add-task-form").submit();
-      })
-      .catch(err => alert(err));
+    // e.preventDefault();
+    // axios.post("https://timetracker-api-node.herokuapp.com/tasks", task)
+    //   .then(result => {
+    //     console.log(result);
+    //     document.getElementById("add-task-form").submit();
+    //   })
+    //   .catch(err => alert(err));
   };
 
   return (
