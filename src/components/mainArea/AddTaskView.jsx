@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function AddTaskView(props) {
+
+  const [task, updateTask] = useState({ title: "", startDate: "", endDate: "", time: 0, description: "" });
+
+  function sendDataToApi(e) {
+    e.preventDefault();
+    console.dir(e);
+    axios.post("https://timetracker-api-node.herokuapp.com/tasks", task)
+      .then(result => {
+        console.log(result);
+        document.getElementById("add-task-form").submit();
+      })
+      .catch(err => alert(err));
+  };
+
   return (
     <div
-    className="modal fade"
+      className="modal fade"
       id="addTask"
       tabIndex="-1"
       aria-labelledby="exampleModalLabel"
@@ -22,7 +37,7 @@ function AddTaskView(props) {
               aria-label="Close"
             ></button>
           </div>
-          <form>
+          <form id="add-task-form">
             <div className="modal-body">
               <div className="input-group mb-3">
                 <label htmlFor="new-task-title" className="input-group-text">
@@ -32,6 +47,8 @@ function AddTaskView(props) {
                   type="text"
                   className="form-control"
                   id="new-task-title"
+                  value={task.title}
+                  onChange={(e) => updateTask({ ...task, title: e.target.value })}
                 ></input>
               </div>
 
@@ -43,12 +60,16 @@ function AddTaskView(props) {
                   type="date"
                   className="form-control"
                   id="new-task-start"
+                  value={task.startDate}
+                  onChange={(e) => updateTask({ ...task, startDate: e.target.value })}
                 ></input>
 
                 <input
                   type="date"
                   className="form-control"
                   id="new-task-end"
+                  value={task.endDate}
+                  onChange={(e) => updateTask({ ...task, endDate: e.target.value })}
                 ></input>
                 <label htmlFor="new-task-end" className="input-group-text">
                   End
@@ -63,6 +84,8 @@ function AddTaskView(props) {
                   type="number"
                   className="form-control"
                   id="new-task-title"
+                  value={task.time}
+                  onChange={(e) => updateTask({ ...task, time: e.target.value })}
                 ></input>
 
                 <span className="input-group-text" id="addon-wrapping">
@@ -86,11 +109,13 @@ function AddTaskView(props) {
                   type="text"
                   className="form-control"
                   id="new-task-desc"
+                  value={task.description}
+                  onChange={(e) => updateTask({ ...task, description: e.target.value })}
                 ></textarea>
               </div>
             </div>
             <div className="modal-footer">
-              <button type="submit" className="btn btn-outline-primary">
+              <button id="add-task" type="submit" className="btn btn-outline-primary" onClick={sendDataToApi}>
                 Add
               </button>
             </div>
