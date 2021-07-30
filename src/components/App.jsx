@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./header/Header";
 import MainArea from "./mainArea/MainArea"
 import { createStore } from "redux";
@@ -14,14 +14,16 @@ const store = createStore(
 );
 
 function App() {
+  const [addTaskViewActive, setAddTaskViewActive] = useState(false);
+
   return (
     <Provider store={store}>
       <Router>
         <div className="container">
           <Header />
           <MainArea />
-          <AddTaskView />
-          <AddButton />
+          <AddTaskView active={addTaskViewActive} setActive={setAddTaskViewActive} />
+          <AddButton active={addTaskViewActive} setActive={setAddTaskViewActive} />
         </div>
       </Router>
     </Provider>

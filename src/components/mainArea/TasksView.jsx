@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import TaskView from "../general/TaskView";
 
 function TasksView(props) {
     const [taskList, setTaskList] = useState([])
@@ -13,7 +14,7 @@ function TasksView(props) {
     return (
         <section className="task-list">
             {taskList ?
-                taskList.map((task) => <h1 key={task._id}>{task.title}</h1>)
+                taskList.map((task) => <TaskView task={task} key={task._id} />)
                 :
                 "Sorry, no tasks available"
             }

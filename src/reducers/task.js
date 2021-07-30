@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const initialState = [];
 
 const taskReducer = (state = initialState, action) => {
@@ -10,4 +8,4 @@ const taskReducer = (state = initialState, action) => {
     };
 }
 
-export default monthReducer;
+export default taskReducer;
