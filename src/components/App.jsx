@@ -5,6 +5,7 @@ import { createStore } from "redux";
 import Reducers from "../reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+import Modal from "./general/Modal";
 import AddTaskView from "./mainArea/AddTaskView";
 import AddButton from "./general/AddButton";
 
@@ -22,7 +23,9 @@ function App() {
         <div className="container">
           <Header />
           <MainArea />
-          <AddTaskView active={addTaskViewActive} setActive={setAddTaskViewActive} />
+          <Modal active={addTaskViewActive} setActive={setAddTaskViewActive} title="Add Task">
+            <AddTaskView />
+          </Modal>
           <AddButton active={addTaskViewActive} setActive={setAddTaskViewActive} />
         </div>
       </Router>
