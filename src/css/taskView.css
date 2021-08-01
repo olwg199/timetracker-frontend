@@ -25,11 +25,15 @@
   display: flex;
 }
 
-.stopwatch_control {
+.stopwatch_control,
+.task-item_edit,
+.task-item_delete {
   cursor: pointer;
-  margin: 0 5px;
+  margin-left: 5px;
 }
 
-.stopwatch_control:hover {
+.stopwatch_control:hover,
+.task-item_edit:hover,
+.task-item_delete:hover {
   color: rgba(0, 0, 0, 0.6);
 }

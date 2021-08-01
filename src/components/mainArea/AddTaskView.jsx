@@ -9,7 +9,7 @@ function AddTaskView({ active, setActive }) {
     "monthly",
     "annual"
   ];
-  const taskInitialState = { title: "", time: 0, frequency: "", description: "", isActive: true };
+  const taskInitialState = { title: "", time: 0, frequency: frequencyOptions[0], description: "", isActive: true };
   const [task, updateTask] = useState(taskInitialState);
 
   const updateTitle = (e) => { updateTask({ ...task, title: e.target.value }) };
@@ -28,7 +28,7 @@ function AddTaskView({ active, setActive }) {
       })
       .catch(err => {
         console.log(err);
-        alert(err)
+        alert(err);
       });
   };
 
