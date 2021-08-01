@@ -11,8 +11,8 @@ function AddTaskView({ active, setActive, title, children }) {
                     <div className="modal-header_title">
                         {title}
                     </div>
-                    <div className="modal-header_close-btn" onClick={() => setActive(!active)}>
-                        <i class="far fa-times-circle"></i>
+                    <div className="modal-header_close-btn" id="modal-header_close-btn" onClick={() => setActive(!active)}>
+                        <i className="far fa-times-circle"></i>
                     </div>
                 </div>
                 {children}

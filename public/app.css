@@ -14,7 +14,8 @@ body {
 .container {
   padding: 0 1rem;
   position: relative;
-  width: 25%;
+  min-width: 450px;
+  max-width: 25%;
   margin: 0 auto;
   margin-top: 5%;
   box-sizing: border-box;
@@ -98,3 +99,41 @@ header .logo img {
 
 /* AddTaskView section
 ======================== */
+.add-task {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 5px 0;
+  padding: 0;
+  border: 1px solid silver;
+}
+
+.input-group label {
+  display: block;
+  padding: 7px 12px;
+  background-color: silver;
+}
+
+.input-group .input {
+  font-family: inherit;
+  flex: 1 1 auto;
+  border: none;
+  border-radius: 0;
+}
+
+.add-task-button {
+  display: flex;
+  align-self: flex-end;
+  color: white;
+  background-color: green;
+}
+
+.add-task-button:hover {
+  background-color: rgba(0, 128, 0, 0.7);
+  animation: 0.5s linear 1s infinite alternate slidein;
+}
