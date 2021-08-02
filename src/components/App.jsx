@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import Header from "./header/Header";
 import MainArea from "./mainArea/MainArea"
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import Reducers from "../reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import Modal from "./general/Modal";
 import AddTaskView from "./mainArea/AddTaskView";
 import AddButton from "./general/AddButton";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
   Reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(
+    applyMiddleware(thunk)
+  )
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 function App() {

@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import TaskView from "../general/TaskView";
+import { useSelector, useDispatch } from "react-redux";
+import { getTasks } from "../../actions/taskActions";
 
 function TasksView(props) {
     const basicURL = "https://timetracker-api-node.herokuapp.com/tasks/";
-    const [taskList, setTaskList] = useState([]);
+    const dispatch = useDispatch();
+    const taskList = useSelector(state => state.tasks);
 
     useEffect(() => {
-        axios.get(basicURL)
-            .then((result) => {
-                setTaskList(result.data.tasks);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        dispatch(getTasks());
     }, [])
-
 
     function deleteTask(id) {
         axios.delete(basicURL + id)
