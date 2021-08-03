@@ -10,3 +10,23 @@ export const getTasks = () => {
             });
     };
 };
+
+export const removeTask = (id) => {
+    return (dispatch) => {
+        axios.delete(`${basicURL}/${id}`)
+            .then((result) => {
+                dispatch(getTasks());
+            })
+            .catch(err => console.log("delete:", err));
+    };
+};
+
+export const addTask = (task) => {
+    return (dispatch) => {
+        axios.post(`${basicURL}`, task)
+            .then((result) => {
+                dispatch(getTasks());
+            })
+            .catch(err => console.log("add:", err));
+    };
+};

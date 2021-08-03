@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import InputGroup from "../general/InputGroup";
-import axios from "axios";
 import Button from "../general/Button";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../actions/taskActions";
 
 function AddTaskView({ active, setActive }) {
+  const dispatch = useDispatch();
   const frequencyOptions = [
     "daily",
     "monthly",
@@ -19,17 +21,9 @@ function AddTaskView({ active, setActive }) {
 
   function sendDataToApi(e) {
     e.preventDefault();
-    axios.post("https://timetracker-api-node.herokuapp.com/tasks", task)
-      .then(result => {
-        console.log(result);
-        alert("You succesefully added a new goal!");
-        updateTask(taskInitialState);
-        document.querySelector("#modal-header_close-btn").click();
-      })
-      .catch(err => {
-        console.log(err);
-        alert(err);
-      });
+    dispatch(addTask(task));
+    updateTask(taskInitialState);
+    document.querySelector("#modal-header_close-btn").click();
   };
 
   return (
