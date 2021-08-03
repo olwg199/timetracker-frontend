@@ -16,7 +16,6 @@ const store = createStore(
   composeWithDevTools(
     applyMiddleware(thunk)
   )
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 function App() {
@@ -29,7 +28,7 @@ function App() {
           <Header />
           <MainArea />
           <Modal active={addTaskViewActive} setActive={setAddTaskViewActive} title="Add Task">
-            <AddTaskView />
+            <AddTaskView setActive={setAddTaskViewActive} />
           </Modal>
           <AddButton active={addTaskViewActive} setActive={setAddTaskViewActive} />
         </div>

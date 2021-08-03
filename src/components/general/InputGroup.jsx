@@ -9,7 +9,7 @@ function InputGroup({ value, setValue, type, name, rows, options }) {
             break;
         case ("select"):
             inputField =
-                <select onChange={setValue} className="input">
+                <select onChange={setValue} className="input" defaultValue={value}>
                     {options.map((opt) => <option value={opt} key={opt}>{opt}</option >)}
                 </select>
             break;
