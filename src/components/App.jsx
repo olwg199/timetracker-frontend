@@ -6,7 +6,7 @@ import Reducers from "../reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import Modal from "./general/Modal";
-import AddTaskView from "./mainArea/AddTaskView";
+import AddUpdateTaskView from "./mainArea/AddUpdateTaskView";
 import AddButton from "./general/AddButton";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -28,7 +28,7 @@ function App() {
           <Header />
           <MainArea />
           <Modal active={addTaskViewActive} setActive={setAddTaskViewActive} title="Add Task">
-            <AddTaskView setActive={setAddTaskViewActive} />
+            <AddUpdateTaskView setActive={setAddTaskViewActive} />
           </Modal>
           <AddButton active={addTaskViewActive} setActive={setAddTaskViewActive} />
         </div>

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import InputGroup from "../general/InputGroup";
 import Button from "../general/Button";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../actions/taskActions";
+import { addTask, updateTask } from "../../actions/taskActions";
 
-function AddTaskView({ currentTask, setActive }) {
+function AddUpdateTaskView({ currentTask, setActive, type }) {
   const dispatch = useDispatch();
   const frequencyOptions = [
     "daily",
@@ -12,17 +12,26 @@ function AddTaskView({ currentTask, setActive }) {
     "annual"
   ];
   const taskInitialState = currentTask || { title: "", time: 0, frequency: frequencyOptions[0], description: "", isActive: true };
-  const [task, updateTask] = useState(taskInitialState);
+  const [task, setTask] = useState(taskInitialState);
 
-  const updateTitle = (e) => { updateTask({ ...task, title: e.target.value }) };
-  const updateTime = (e) => { updateTask({ ...task, time: e.target.value }) }
-  const updateFrequency = (e) => { updateTask({ ...task, frequency: e.target.value }) };
-  const updateDescription = (e) => { updateTask({ ...task, description: e.target.value }) };
+  const updateTitle = (e) => { setTask({ ...task, title: e.target.value }) };
+  const updateTime = (e) => { setTask({ ...task, time: e.target.value }) }
+  const updateFrequency = (e) => { setTask({ ...task, frequency: e.target.value }) };
+  const updateDescription = (e) => { setTask({ ...task, description: e.target.value }) };
 
   function sendDataToApi(e) {
     e.preventDefault();
-    dispatch(addTask(task));
-    updateTask(taskInitialState);
+    switch (type) {
+      case "update": {
+        dispatch(updateTask(task));
+        break;
+      }
+      default: {
+        dispatch(addTask(task));
+        updateTask(taskInitialState);
+      }
+    }
+
     setActive(false);
   };
 
@@ -32,9 +41,9 @@ function AddTaskView({ currentTask, setActive }) {
       <InputGroup name="Time" value={task.time} setValue={updateTime} type="number" />
       <InputGroup name="Frequency" value={task.frequency} setValue={updateFrequency} type="select" options={frequencyOptions} />
       <InputGroup name="Description" value={task.description} setValue={updateDescription} type="textarea" rows="5" />
-      <Button text="Add task" href="#" onClick={sendDataToApi} classList={["btn add-task-button"]} />
+      <Button text={type === "update" ? "Update task" : "Add task"} href="#" onClick={sendDataToApi} classList={["btn add-task-button"]} />
     </div>
   );
 }
 
-export default AddTaskView;
+export default AddUpdateTaskView;

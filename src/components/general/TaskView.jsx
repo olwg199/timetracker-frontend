@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../css/taskView.css";
 import TimeHelper from "../../helpers/TimeHelper";
 import Stopwatch from "../general/Stopwatch";
-import AddTaskView from "../mainArea/AddTaskView";
+import AddUpdateTaskView from "../mainArea/AddUpdateTaskView";
 import Modal from "../general/Modal";
 
 function TaskView({ task, deleteTask, updateSpentTime }) {
@@ -19,7 +19,7 @@ function TaskView({ task, deleteTask, updateSpentTime }) {
             <div className="task-item_delete" onClick={deleteTask}><i className="fas fa-trash-alt"></i></div>
 
             <Modal active={updateTaskViewActive} setActive={setUpdateTaskViewActive} title="Update Task">
-                <AddTaskView currentTask={task} setActive={setUpdateTaskViewActive} />
+                <AddUpdateTaskView currentTask={task} setActive={setUpdateTaskViewActive} type="update" />
             </Modal>
         </div>
     );
