@@ -28,7 +28,8 @@ function AddUpdateTaskView({ currentTask, setActive, type }) {
       }
       default: {
         dispatch(addTask(task));
-        updateTask(taskInitialState);
+        console.log(taskInitialState);
+        setTask(taskInitialState);
       }
     }
 
