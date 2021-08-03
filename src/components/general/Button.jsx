@@ -1,8 +1,7 @@
 import React from "react";
 
-function Button(props){
-    const {classList = [], href = ""} = props;
-    return <a className={classList.join(' ')} href={href}>{props.text}</a>
+function Button({ text, href, onClick, classList }) {
+    return <a className={classList !== undefined ? classList.join(" ") : ""} href={href} onClick={onClick}>{text}</a>
 }
 
 export default Button;

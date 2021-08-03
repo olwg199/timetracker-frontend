@@ -1,12 +1,8 @@
 import { combineReducers } from "redux";
-import yearReducer from "./year";
-import monthReducer from "./month";
-import currentViewReducer from "./currentView";
+import tasksReducer from "./tasks";
 
 const Reducers = combineReducers({
-    year: yearReducer,
-    month: monthReducer,
-    currentView: currentViewReducer
+    tasks: tasksReducer
 });
 
 export default Reducers;

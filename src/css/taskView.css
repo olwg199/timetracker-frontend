@@ -1,0 +1,39 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid silver;
+}
+
+.task-item_title {
+  font-size: 1.25rem;
+  flex: 2;
+  padding: 5px 10px;
+}
+
+.task-item_time i,
+.task-item_time-spent i {
+  margin-right: 5px;
+}
+
+.task-item_time,
+.task-item_time-spent {
+  display: flex;
+  flex: 1;
+}
+
+.stopwatch {
+  display: flex;
+}
+
+.stopwatch_control,
+.task-item_edit,
+.task-item_delete {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.stopwatch_control:hover,
+.task-item_edit:hover,
+.task-item_delete:hover {
+  color: rgba(0, 0, 0, 0.6);
+}

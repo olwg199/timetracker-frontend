@@ -1,14 +1,9 @@
 import React from "react";
 
-function AddButton() {
+function AddButton({ active, setActive }) {
 
   return (
-    <button
-      type="button"
-      className="btn add-button"
-      data-bs-toggle="modal"
-      data-bs-target="#addTask"
-    >
+    <button type="button" className="btn add-button" onClick={() => setActive(!active)}>
       <i className="fas fa-plus"></i>
     </button>
   );
