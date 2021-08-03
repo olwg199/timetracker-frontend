@@ -5,14 +5,14 @@ import Stopwatch from "../general/Stopwatch";
 import AddTaskView from "../mainArea/AddTaskView";
 import Modal from "../general/Modal";
 
-function TasksView({ task, deleteTask, updateSpentTime }) {
+function TaskView({ task, deleteTask, updateSpentTime }) {
     const [updateTaskViewActive, setUpdateTaskViewActive] = useState(false);
 
     return (
         <div className="task-item">
             <div className="task-item_title">{task.title}</div>
             <div className="task-item_time">
-                <i className="far fa-clock"></i>{TimeHelper.getTimeBySeconds(task.time)}
+                <i className="far fa-clock"></i>{TimeHelper.getTimeBySeconds(TimeHelper.getSecondsFromMinutes(task.time))}
             </div>
             <Stopwatch saveTime={updateSpentTime} />
             <div className="task-item_edit" onClick={() => { setUpdateTaskViewActive(true) }}><i className="fas fa-pen-square"></i></div>
@@ -25,4 +25,4 @@ function TasksView({ task, deleteTask, updateSpentTime }) {
     );
 }
 
-export default TasksView;
+export default TaskView;

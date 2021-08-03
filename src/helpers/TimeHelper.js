@@ -11,8 +11,13 @@ function getTimeBySeconds(num) {
         (seconds < 10 ? "0" + seconds : seconds);
 }
 
+function getSecondsFromMinutes(mins) {
+    return mins * 60;
+}
+
 const TimeHelper = {
-    getTimeBySeconds
+    getTimeBySeconds,
+    getSecondsFromMinutes
 }
 
 export default TimeHelper;
