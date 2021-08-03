@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/timetracker-frontend/static/css/main.a0c26b3f.chunk.css",
+    "main.js": "/timetracker-frontend/static/js/main.8d4fc18c.chunk.js",
+    "main.js.map": "/timetracker-frontend/static/js/main.8d4fc18c.chunk.js.map",
+    "runtime-main.js": "/timetracker-frontend/static/js/runtime-main.66f5728a.js",
+    "runtime-main.js.map": "/timetracker-frontend/static/js/runtime-main.66f5728a.js.map",
+    "static/js/2.42ce4292.chunk.js": "/timetracker-frontend/static/js/2.42ce4292.chunk.js",
+    "static/js/2.42ce4292.chunk.js.map": "/timetracker-frontend/static/js/2.42ce4292.chunk.js.map",
+    "index.html": "/timetracker-frontend/index.html",
+    "static/css/main.a0c26b3f.chunk.css.map": "/timetracker-frontend/static/css/main.a0c26b3f.chunk.css.map",
+    "static/js/2.42ce4292.chunk.js.LICENSE.txt": "/timetracker-frontend/static/js/2.42ce4292.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66f5728a.js",
+    "static/js/2.42ce4292.chunk.js",
+    "static/css/main.a0c26b3f.chunk.css",
+    "static/js/main.8d4fc18c.chunk.js"
+  ]
+}
