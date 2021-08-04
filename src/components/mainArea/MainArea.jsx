@@ -1,11 +1,10 @@
 import React from "react";
-import TasksView from "../mainArea/TasksView";
+import GoalsView from "../mainArea/GoalsView";
 
 function MainArea(props) {
     return (
         <section id="main-area">
-            <TasksView />
-
+            <GoalsView />
         </section>
     );
 }

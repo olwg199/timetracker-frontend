@@ -67,13 +67,13 @@ header .logo img {
   background-color: rgba(0, 0, 255, 0.5);
 }
 
-/* TasksView section
+/* GoalsView section
 ============= */
-.task-list {
+.goal-list {
   min-height: 500px;
 }
 
-/* Add button
+/* New goal button
 ============= */
 
 .add-button {
@@ -97,9 +97,9 @@ header .logo img {
   color: white;
 }
 
-/* AddTaskView section
+/* AddUpdateGoalView section
 ======================== */
-.add-task {
+.add-goal {
   display: flex;
   flex-direction: column;
 }
@@ -126,14 +126,14 @@ header .logo img {
   border-radius: 0;
 }
 
-.add-task-button {
+.add-goal-button {
   display: flex;
   align-self: flex-end;
   color: white;
   background-color: green;
 }
 
-.add-task-button:hover {
+.add-goal-button:hover {
   background-color: rgba(0, 128, 0, 0.7);
   animation: 0.5s linear 1s infinite alternate slidein;
 }

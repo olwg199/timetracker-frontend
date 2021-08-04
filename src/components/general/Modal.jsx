@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/modal.css";
 
-function AddTaskView({ active, setActive, title, children }) {
+function Modal({ active, setActive, title, children }) {
     return (
         <div className={active ? "modal active" : "modal"} onClick={() => setActive(!active)}>
 
@@ -21,4 +21,4 @@ function AddTaskView({ active, setActive, title, children }) {
     );
 }
 
-export default AddTaskView;
+export default Modal;

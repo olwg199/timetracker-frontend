@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import TimeHelper from "../../helpers/TimeHelper";
 
-function TasksView(props) {
+function Stopwatch(props) {
     const timer = useRef({});
     const [stopwatch, updateStopwatch] = useState({ time: 0, isStarted: false });
     const start = () => {
@@ -32,4 +32,4 @@ function TasksView(props) {
     );
 }
 
-export default TasksView;
+export default Stopwatch;

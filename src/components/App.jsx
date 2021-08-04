@@ -6,7 +6,7 @@ import Reducers from "../reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import Modal from "./general/Modal";
-import AddUpdateTaskView from "./mainArea/AddUpdateTaskView";
+import AddUpdateGoalView from "./mainArea/AddUpdateGoalView";
 import AddButton from "./general/AddButton";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -19,7 +19,7 @@ const store = createStore(
 );
 
 function App() {
-  const [addTaskViewActive, setAddTaskViewActive] = useState(false);
+  const [addGoalViewActive, setAddGoalViewActive] = useState(false);
 
   return (
     <Provider store={store}>
@@ -27,10 +27,10 @@ function App() {
         <div className="container">
           <Header />
           <MainArea />
-          <Modal active={addTaskViewActive} setActive={setAddTaskViewActive} title="Add Task">
-            <AddUpdateTaskView setActive={setAddTaskViewActive} />
+          <Modal active={addGoalViewActive} setActive={setAddGoalViewActive} title="Add goal">
+            <AddUpdateGoalView setActive={setAddGoalViewActive} />
           </Modal>
-          <AddButton active={addTaskViewActive} setActive={setAddTaskViewActive} />
+          <AddButton active={addGoalViewActive} setActive={setAddGoalViewActive} />
         </div>
       </Router>
     </Provider>

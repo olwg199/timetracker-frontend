@@ -1,42 +1,42 @@
 import axios from "axios";
-import { setTasks } from "../reducers/tasks";
+import { setGoals } from "../reducers/goals";
 const basicURL = "https://timetracker-api-node.herokuapp.com/tasks";
 // const basicURL = "http://localhost:3000/tasks";
 
-export const getTasks = () => {
+export const getGoals = () => {
     return (dispatch) => {
         axios.get(basicURL)
             .then((result) => {
-                dispatch(setTasks(result.data.tasks));
+                dispatch(setGoals(result.data.tasks));
             });
     };
 };
 
-export const removeTask = (id) => {
+export const removeGoal = (id) => {
     return (dispatch) => {
         axios.delete(`${basicURL}/${id}`)
             .then((result) => {
-                dispatch(getTasks());
+                dispatch(getGoals());
             })
             .catch(err => console.log("delete:", err));
     };
 };
 
-export const addTask = (task) => {
+export const addGoal = (goal) => {
     return (dispatch) => {
-        axios.post(`${basicURL}`, task)
+        axios.post(`${basicURL}`, goal)
             .then((result) => {
-                dispatch(getTasks());
+                dispatch(getGoals());
             })
             .catch(err => console.log("add:", err));
     };
 };
 
-export const updateTask = (task) => {
+export const updateGoal = (goal) => {
     return (dispatch) => {
-        axios.patch(`${basicURL}/${task._id}`, task)
+        axios.patch(`${basicURL}/${goal._id}`, goal)
             .then((result) => {
-                dispatch(getTasks());
+                dispatch(getGoals());
             })
             .catch(err => console.log("add:", err));
     };

@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "./logo.svg"
 // import Button from "../general/Button";
 
 function Header() {
     return (
         <header id="header">
             <div className="logo">
-                <img src="./logo.svg" alt="Logo" />
+                <img src={logo} alt="Logo" />
             </div>
             {/* <div className="login-area">
                 <Button classList={["btn", "btn-signin"]} text="Sign In" />
