@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setGoals } from "../reducers/goals";
-const basicURL = "https://timetracker-api-node.herokuapp.com/tasks";
-// const basicURL = "http://localhost:3000/tasks";
+// const basicURL = "https://timetracker-api-node.herokuapp.com/tasks";
+const basicURL = "http://localhost:3000/tasks";
 
 export const getGoals = () => {
     return (dispatch) => {
@@ -28,7 +28,9 @@ export const addGoal = (goal) => {
             .then((result) => {
                 dispatch(getGoals());
             })
-            .catch(err => console.log("add:", err));
+            .catch((err) => {
+                console.log(err.response.data.errorMessage);
+            });
     };
 };
 

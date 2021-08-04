@@ -21,20 +21,46 @@ function AddUpdateGoalView({ currentGoal, setActive, type }) {
 
   function sendDataToApi(e) {
     e.preventDefault();
+    const validationResult = validateGoal(goal);
+    if (!validationResult.isValid) {
+      alert(validationResult.message);
+      return;
+    }
+
     switch (type) {
       case "update": {
-        dispatch(updateGoal(goal));
+        console.log(dispatch(updateGoal(goal)));
         break;
       }
       default: {
         dispatch(addGoal(goal));
-        console.log(goalInitialState);
         setGoal(goalInitialState);
       }
     }
 
     setActive(false);
   };
+
+  function validateGoal(item) {
+    let isValid = true;
+    const messages = [];
+    if (!goal.title) {
+      isValid = false;
+      messages.push("Field title is required!");
+    }
+    if (goal.time <= 0) {
+      isValid = false;
+      messages.push("Time must be grater than 0.");
+    }
+    if (!goal.frequency) {
+      isValid = false;
+      messages.push("You have to choose your frequency.");
+    }
+    return {
+      isValid,
+      message: messages.join(" ")
+    }
+  }
 
   return (
     <div className="add-goal">
