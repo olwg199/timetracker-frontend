@@ -71,6 +71,7 @@ header .logo img {
 ============= */
 .goal-list {
   min-height: 500px;
+  margin-top: 15px;
 }
 
 /* New goal button
