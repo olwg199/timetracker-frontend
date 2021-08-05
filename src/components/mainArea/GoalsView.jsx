@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import GoalView from "../general/GoalView";
 import { useSelector, useDispatch } from "react-redux";
 import { getGoals, removeGoal } from "../../actions/goalActions";
+import Accordion from "../general/accordion/Accordion";
 
 function GoalsView(props) {
     const dispatch = useDispatch();
@@ -13,11 +14,43 @@ function GoalsView(props) {
 
     return (
         <section className="goal-list">
-            {goalList.length ?
-                goalList.map((goal) => <GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />)
-                :
-                "Sorry, no goals available"
-            }
+
+            <Accordion title="Daily goals">
+                {goalList.length > 0 ?
+                    goalList.reduce((dailyGoals, goal) => {
+                        if (goal.frequency === "daily") {
+                            dailyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                        }
+                        return dailyGoals;
+                    }, [])
+                    :
+                    "Sorry, no goals available"
+                }
+            </Accordion>
+            <Accordion title="Monthly goals">
+                {goalList.length > 0 ?
+                    goalList.reduce((monthlyGoals, goal) => {
+                        if (goal.frequency === "monthly") {
+                            monthlyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                        }
+                        return monthlyGoals;
+                    }, [])
+                    :
+                    "Sorry, no goals available"
+                }
+            </Accordion>
+            <Accordion title="Annual goals">
+                {goalList.length > 0 ?
+                    goalList.reduce((annualGoals, goal) => {
+                        if (goal.frequency === "annual") {
+                            annualGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                        }
+                        return annualGoals;
+                    }, [])
+                    :
+                    "Sorry, no goals available"
+                }
+            </Accordion>
         </section>
     );
 }

@@ -1,13 +1,16 @@
 .goal-item {
   display: flex;
   align-items: center;
+  padding: 5px 10px;
   border-bottom: 1px solid silver;
+}
+.goal-item:last-child {
+  border-bottom: none;
 }
 
 .goal-item_title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   flex: 2;
-  padding: 5px 10px;
 }
 
 .goal-item_time i,
