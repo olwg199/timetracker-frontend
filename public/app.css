@@ -40,7 +40,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 2px solid rgba(126, 182, 195, 0.2);
 }
 
@@ -65,6 +65,13 @@ header .logo img {
 .btn-signup:hover {
   color: white;
   background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* MainArea styles
+================== */
+#main-area {
+  min-height: 500px;
+  margin-top: 15px;
 }
 
 /* GoalsView section
