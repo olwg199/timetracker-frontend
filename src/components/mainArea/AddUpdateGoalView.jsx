@@ -68,7 +68,7 @@ function AddUpdateGoalView({ currentGoal, setActive, type }) {
       <InputGroup name="Time" value={goal.time} setValue={updateTime} type="number" />
       <InputGroup name="Frequency" value={goal.frequency} setValue={updateFrequency} type="select" options={frequencyOptions} />
       <InputGroup name="Description" value={goal.description} setValue={updateDescription} type="textarea" rows="5" />
-      <Button text={type === "update" ? "Update goal" : "Add goal"} href="#" onClick={sendDataToApi} classList={["btn add-goal-button"]} />
+      <Button text={type === "update" ? "Update goal" : "Add goal"} href="#" onClick={sendDataToApi} classList={["btn", "add-goal-button"]} />
     </div>
   );
 }

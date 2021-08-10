@@ -21,6 +21,7 @@ const store = createStore(
 function App() {
   const [addGoalViewActive, setAddGoalViewActive] = useState(false);
 
+
   return (
     <Provider store={store}>
       <Router>
