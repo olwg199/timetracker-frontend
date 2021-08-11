@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import goalsReducer from "./goals";
-import userReducer from "./users";
+import goalsReducer from "./goals-reducer";
+import userReducer from "./user-reducer";
 
 const Reducers = combineReducers({
     goals: goalsReducer,

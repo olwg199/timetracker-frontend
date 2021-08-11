@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "components/general/Button";
 import logo from "./logo.svg";
-import { logout, refresh } from "actions/usersActions";
+import { logout, refresh } from "actions/user-actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+
 import "css/header/header.css";
 
 function Header() {

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Button from 'components/general/Button';
 import InputGroup from "components/general/InputGroup";
 import { useDispatch, useSelector } from "react-redux";
-import "css/MainArea/loginForm.css";
-import { login } from 'actions/usersActions';
+import { login } from 'actions/user-actions';
 import { Redirect } from 'react-router-dom';
+
+import "css/MainArea/loginForm.css";
 
 export default function LoginForm() {
     const [username, setUsername] = useState("");

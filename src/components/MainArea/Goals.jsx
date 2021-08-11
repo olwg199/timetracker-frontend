@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import GoalView from "components/general/GoalView";
 import { useSelector, useDispatch } from "react-redux";
-import { getGoals, removeGoal } from "actions/goalActions";
+import { getGoals, deleteGoal } from "actions/goals-actions";
 import Accordion from "components/general/Accordion";
+
 import "css/general/goals.css";
 
 function Goals(props) {
@@ -20,7 +21,7 @@ function Goals(props) {
                 {goalList.length > 0 ?
                     goalList.reduce((dailyGoals, goal) => {
                         if (goal.frequency === "daily") {
-                            dailyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                            dailyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(deleteGoal(goal._id)) }} />);
                         }
                         return dailyGoals;
                     }, [])
@@ -32,7 +33,7 @@ function Goals(props) {
                 {goalList.length > 0 ?
                     goalList.reduce((monthlyGoals, goal) => {
                         if (goal.frequency === "monthly") {
-                            monthlyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                            monthlyGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(deleteGoal(goal._id)) }} />);
                         }
                         return monthlyGoals;
                     }, [])
@@ -44,7 +45,7 @@ function Goals(props) {
                 {goalList.length > 0 ?
                     goalList.reduce((annualGoals, goal) => {
                         if (goal.frequency === "annual") {
-                            annualGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(removeGoal(goal._id)) }} />);
+                            annualGoals.push(<GoalView goal={goal} key={goal._id} deleteGoal={() => { dispatch(deleteGoal(goal._id)) }} />);
                         }
                         return annualGoals;
                     }, [])

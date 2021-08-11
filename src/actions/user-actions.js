@@ -6,7 +6,6 @@ export const login = (username, password) => {
         try {
             const response = await AuthService.login(username, password);
             localStorage.setItem("token", response.data.accessToken);
-            console.log(response);
             dispatch(loginUser(response.data, true));
         } catch (e) {
             console.log(e.response?.data?.message);
@@ -19,7 +18,6 @@ export const register = (username, password, email) => {
         try {
             const response = await AuthService.register(username, password, email);
             localStorage.setItem("token", response.data.accessToken);
-            console.log(response);
             dispatch(registerUser(response.data, true));
         } catch (e) {
             console.log(e.response?.data?.message);

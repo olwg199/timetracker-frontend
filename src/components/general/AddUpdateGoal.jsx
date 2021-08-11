@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import InputGroup from "components/general/InputGroup";
 import Button from "components/general/Button";
 import { useDispatch } from "react-redux";
-import { addGoal, updateGoal } from "actions/goalActions";
+import { createGoal, updateGoal } from "actions/goals-actions";
+
 import "css/general/addUpdateGoal.css";
 
 function AddUpdateGoal({ currentGoal, setActive, type }) {
@@ -34,7 +35,7 @@ function AddUpdateGoal({ currentGoal, setActive, type }) {
         break;
       }
       default: {
-        dispatch(addGoal(goal));
+        dispatch(createGoal(goal));
         setGoal(goalInitialState);
       }
     }
