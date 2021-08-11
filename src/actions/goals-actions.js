@@ -1,5 +1,5 @@
 import GoalService from "services/GoalService";
-import { setGoals } from "../reducers/goals-reducer";
+import { setGoals } from "actions";
 
 export const getGoals = () => {
     return async (dispatch) => {
