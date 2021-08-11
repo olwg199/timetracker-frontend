@@ -1,9 +1,10 @@
 import React from "react";
-import Button from "../general/Button";
+import Button from "components/general/Button";
 import logo from "./logo.svg";
-import { logout, refresh } from "../../actions/usersActions";
+import { logout, refresh } from "actions/usersActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import "css/header/header.css";
 
 function Header() {
     const dispatch = useDispatch();
@@ -18,7 +19,8 @@ function Header() {
     return (
         <header id="header">
             <div className="logo">
-                <img src={logo} alt="Logo" />
+                <a href="/" alt="Home page">
+                    <img src={logo} alt="Logo" /></a>
             </div>
             {isAuth ?
                 <div className="login-area">

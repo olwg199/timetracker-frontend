@@ -1,0 +1,16 @@
+.add-goal {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-goal-button {
+  display: flex;
+  align-self: flex-end;
+  color: white;
+  background-color: green;
+}
+
+.add-goal-button:hover {
+  background-color: rgba(0, 128, 0, 0.7);
+  animation: 0.5s linear 1s infinite alternate slidein;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "css/general/addButton.css"
 
 function AddButton({ active, setActive }) {
 

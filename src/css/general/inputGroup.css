@@ -1,0 +1,21 @@
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 5px 0;
+  padding: 0;
+  border: 1px solid silver;
+}
+
+.input-group label {
+  display: block;
+  padding: 7px 12px;
+  background-color: silver;
+}
+
+.input-group .input {
+  font-family: inherit;
+  flex: 1 1 auto;
+  border: none;
+  border-radius: 0;
+}

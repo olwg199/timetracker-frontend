@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import GoalView from "../general/GoalView";
+import GoalView from "components/general/GoalView";
 import { useSelector, useDispatch } from "react-redux";
-import { getGoals, removeGoal } from "../../actions/goalActions";
-import Accordion from "../general/accordion/Accordion";
+import { getGoals, removeGoal } from "actions/goalActions";
+import Accordion from "components/general/Accordion";
+import "css/general/goals.css";
 
-function GoalsView(props) {
+function Goals(props) {
     const dispatch = useDispatch();
     const goalList = useSelector(state => state.goals);
 
@@ -55,4 +56,4 @@ function GoalsView(props) {
     );
 }
 
-export default GoalsView;
+export default Goals;

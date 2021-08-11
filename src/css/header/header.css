@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(126, 182, 195, 0.2);
+}
+
+.logo {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.btn {
+  border: 1px solid silver;
+}
+
+.btn-signin:hover {
+  color: white;
+  background-color: rgba(0, 128, 0, 0.7);
+}
+
+.btn-signup {
+  border-left: none;
+}
+
+.btn-signup:hover {
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+}

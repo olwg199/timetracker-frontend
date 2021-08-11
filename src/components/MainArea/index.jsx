@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import GoalsView from "../mainArea/GoalsView";
-import LoginForm from "../LoginForm/LoginForm";
+import Goals from "./Goals";
+import LoginForm from "./LoginForm";
 
 function MainArea(props) {
     return (
         <section id="main-area">
             <Switch>
                 <Route exact path="/">
-                    <GoalsView />
+                    <Goals />
                 </Route>
                 <Route path="/login">
                     <LoginForm />

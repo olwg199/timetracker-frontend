@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../../css/goalView.css";
-import TimeHelper from "../../helpers/TimeHelper";
-import Stopwatch from "./Stopwatch";
-import AddUpdateGoalView from "../mainArea/AddUpdateGoalView";
-import Modal from "./Modal";
+import "css/general/goalView.css";
+import TimeHelper from "helpers/TimeHelper";
+import Stopwatch from "components/general/Stopwatch";
+import AddUpdateGoal from "components/general/AddUpdateGoal";
+import Modal from "components/general/Modal";
 
 function GoalView({ goal, deleteGoal, updateSpentTime }) {
     const [updateGoalViewActive, setUpdateGoalViewActive] = useState(false);
@@ -19,7 +19,7 @@ function GoalView({ goal, deleteGoal, updateSpentTime }) {
             <div className="goal-item_delete" onClick={deleteGoal}><i className="fas fa-trash-alt"></i></div>
 
             <Modal active={updateGoalViewActive} setActive={setUpdateGoalViewActive} title="Update goal">
-                <AddUpdateGoalView currentGoal={goal} setActive={setUpdateGoalViewActive} type="update" />
+                <AddUpdateGoal currentGoal={goal} setActive={setUpdateGoalViewActive} type="update" />
             </Modal>
         </div>
     );

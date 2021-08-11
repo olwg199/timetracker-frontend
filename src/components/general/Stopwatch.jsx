@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import TimeHelper from "../../helpers/TimeHelper";
+import TimeHelper from "helpers/TimeHelper";
 
 function Stopwatch(props) {
     const timer = useRef({});

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import InputGroup from "../general/InputGroup";
-import Button from "../general/Button";
+import InputGroup from "components/general/InputGroup";
+import Button from "components/general/Button";
 import { useDispatch } from "react-redux";
-import { addGoal, updateGoal } from "../../actions/goalActions";
+import { addGoal, updateGoal } from "actions/goalActions";
+import "css/general/addUpdateGoal.css";
 
-function AddUpdateGoalView({ currentGoal, setActive, type }) {
+function AddUpdateGoal({ currentGoal, setActive, type }) {
   const dispatch = useDispatch();
   const frequencyOptions = [
     "daily",
@@ -73,4 +74,4 @@ function AddUpdateGoalView({ currentGoal, setActive, type }) {
   );
 }
 
-export default AddUpdateGoalView;
+export default AddUpdateGoal;

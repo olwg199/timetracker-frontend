@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Button from '../general/Button';
-import InputGroup from "../general/InputGroup";
+import Button from 'components/general/Button';
+import InputGroup from "components/general/InputGroup";
 import { useDispatch, useSelector } from "react-redux";
-import "./loginForm.css"
-import { login } from '../../actions/usersActions';
+import "css/MainArea/loginForm.css";
+import { login } from 'actions/usersActions';
+import { Redirect } from 'react-router-dom';
 
 export default function LoginForm() {
     const [username, setUsername] = useState("");
@@ -20,10 +21,7 @@ export default function LoginForm() {
     return (
 
         isAuth ?
-            <h3>You already logged in! <br />
-                <a href="http://localhost:3000/"> Back to goals</a>
-            </h3>
-
+            <Redirect to="/" />
             :
             <div id="login-form">
                 <InputGroup type="text" name="Username" setValue={(e) => { setUsername(e.target.value) }} value={username} />
