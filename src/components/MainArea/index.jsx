@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Goals from "./Goals";
 import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 function MainArea(props) {
     return (
@@ -12,6 +13,9 @@ function MainArea(props) {
                 </Route>
                 <Route path="/login">
                     <LoginForm />
+                </Route>
+                <Route path="/register">
+                    <RegisterForm />
                 </Route>
             </Switch>
         </section>

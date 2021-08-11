@@ -18,7 +18,7 @@ export default function userReducer(state = initialState, action) {
             return { ...payload };
         }
         case (REGISTER): {
-            return { ...state };
+            return { ...payload };
         }
         case (LOGOUT): {
             return { ...initialState };

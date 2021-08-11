@@ -1,4 +1,4 @@
-import { loginUser, logoutUser, refreshUser } from "./index";
+import { loginUser, logoutUser, refreshUser, registerUser } from "./index";
 import AuthService from "../services/AuthService"
 
 export const login = (username, password) => {
@@ -17,7 +17,10 @@ export const login = (username, password) => {
 export const register = (username, password, email) => {
     return async (dispatch) => {
         try {
-            await AuthService.register({ username, password });
+            const response = await AuthService.register(username, password, email);
+            localStorage.setItem("token", response.data.accessToken);
+            console.log(response);
+            dispatch(registerUser(response.data, true));
         } catch (e) {
             console.log(e.response?.data?.message);
         }

@@ -30,7 +30,7 @@ function Header() {
                 :
                 <div className="login-area">
                     <Button classList={["btn", "btn-signin"]} text="Sign In" href="/login" />
-                    <Button classList={["btn", "btn-signup"]} text="Sign Up" />
+                    <Button classList={["btn", "btn-signup"]} text="Sign Up" href="/register" />
                 </div>
             }
 
