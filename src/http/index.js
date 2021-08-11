@@ -19,7 +19,8 @@ $api.interceptors.response.use(
     },
     async (error) => {
         const originalRequest = error.config;
-        if (error.response.status === 401) {
+        if (error.response.status === 401 && !error.config._isRetry) {
+            originalRequest._isRetry = true;
             try {
                 const response = await axios.get(`${API_URL}user/refresh`, { withCredentials: true });
                 localStorage.setItem("token", response.data.accessToken);
@@ -28,6 +29,7 @@ $api.interceptors.response.use(
                 console.log(`Interceptor response: ${e}`);
             }
         }
+        throw error;
     });
 
 export default $api;
