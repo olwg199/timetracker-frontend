@@ -31,7 +31,7 @@ function AddUpdateGoal({ currentGoal, setActive, type }) {
 
     switch (type) {
       case "update": {
-        console.log(dispatch(updateGoal(goal)));
+        dispatch(updateGoal(goal));
         break;
       }
       default: {

@@ -2,19 +2,19 @@ import api from "../http/index";
 
 class GoalService {
     async getGoals(username, password) {
-        return api.get(`/tasks`);
+        return api.get(`/goals`);
     };
 
     async createGoal(goal) {
-        return api.post(`/tasks/`, { ...goal });
+        return api.post(`/goals/`, { ...goal });
     };
 
     async updateGoal(goal) {
-        return api.patch(`/tasks/${goal._id}`, { ...goal });
+        return api.patch(`/goals/${goal.id}`, { ...goal });
     };
 
     async deleteGoal(id) {
-        return api.delete(`/tasks/${id}`);
+        return api.delete(`/goals/${id}`);
     };
 }
 

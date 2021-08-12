@@ -5,9 +5,9 @@ export const getGoals = () => {
     return async (dispatch) => {
         try {
             const response = await GoalService.getGoals();
-            dispatch(setGoals(response.data.tasks));
+            dispatch(setGoals(response.data.goals));
         } catch (e) {
-            console.log(e.response.data.errorMessage);
+            console.log(e.response?.data?.message);
         }
     };
 };
@@ -18,7 +18,7 @@ export const createGoal = (goal) => {
             await GoalService.createGoal(goal);
             dispatch(getGoals());
         } catch (e) {
-            console.log(e.response.data.errorMessage);
+            console.log(e.response?.data?.message);
         }
     };
 };
@@ -29,7 +29,7 @@ export const updateGoal = (goal) => {
             await GoalService.updateGoal(goal);
             dispatch(getGoals());
         } catch (e) {
-            console.log(e.response.data.errorMessage);
+            console.log(e.response?.data?.message);
         }
     };
 };
@@ -40,7 +40,7 @@ export const deleteGoal = (id) => {
             await GoalService.deleteGoal(id);
             dispatch(getGoals());
         } catch (e) {
-            console.log(e.response.data.errorMessage);
+            console.log(e.response?.data?.message);
         }
     };
 };
