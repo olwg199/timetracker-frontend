@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/timetracker-frontend/static/css/main.d7107071.chunk.css",
-    "main.js": "/timetracker-frontend/static/js/main.e5c385d8.chunk.js",
-    "main.js.map": "/timetracker-frontend/static/js/main.e5c385d8.chunk.js.map",
+    "main.js": "/timetracker-frontend/static/js/main.674ca71e.chunk.js",
+    "main.js.map": "/timetracker-frontend/static/js/main.674ca71e.chunk.js.map",
     "runtime-main.js": "/timetracker-frontend/static/js/runtime-main.66f5728a.js",
     "runtime-main.js.map": "/timetracker-frontend/static/js/runtime-main.66f5728a.js.map",
     "static/js/2.6eeaf89a.chunk.js": "/timetracker-frontend/static/js/2.6eeaf89a.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.66f5728a.js",
     "static/js/2.6eeaf89a.chunk.js",
     "static/css/main.d7107071.chunk.css",
-    "static/js/main.e5c385d8.chunk.js"
+    "static/js/main.674ca71e.chunk.js"
   ]
 }
