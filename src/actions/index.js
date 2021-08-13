@@ -13,11 +13,13 @@ export const logoutUser = () => ({ type: LOGOUT, payload: {} });
 // Goals Actions
 // ======================================
 export const SET_GOALS = "SET_GOALS";
-export const CREATE_GOAL = "CREATE_GOAL";
-export const UPDATE_GOAL = "UPDATE_GOAL";
-export const DELETE_GOAL = "DELETE_GOAL";
+export const ADD_GOAL = "ADD_GOAL";
+export const CHANGE_GOAL = "CHANGE_GOAL";
+export const REMOVE_GOAL = "REMOVE_GOAL";
+export const SET_GOALS_LOADING = "SET_GOALS_LOADING";
 
 export const setGoals = (goals) => ({ type: SET_GOALS, payload: goals });
-export const createGoal = (goal) => ({ type: CREATE_GOAL, payload: goal });
-export const updateGoal = (id) => ({ type: UPDATE_GOAL, payload: id });
-export const deleteGoal = (id) => ({ type: DELETE_GOAL, payload: id });
+export const addGoal = (goal) => ({ type: ADD_GOAL, payload: goal });
+export const changeGoal = (goal) => ({ type: CHANGE_GOAL, payload: goal });
+export const removeGoal = (id) => ({ type: REMOVE_GOAL, payload: id });
+export const setGoalsLoading = (isLoading) => ({ type: SET_GOALS_LOADING, payload: isLoading });

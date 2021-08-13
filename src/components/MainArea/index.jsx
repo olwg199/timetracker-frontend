@@ -8,7 +8,7 @@ function MainArea(props) {
     return (
         <section id="main-area">
             <Switch>
-                <Route exact path="/">
+                <Route exact path={["/", "/timetracker-frontend"]} >
                     <Goals />
                 </Route>
                 <Route path="/login">

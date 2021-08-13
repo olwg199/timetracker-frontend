@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import GoalView from "components/UI/GoalView";
 import { useSelector, useDispatch } from "react-redux";
-import { getGoals, deleteGoal } from "actions/goals-actions";
+import { fetchGoals, deleteGoal } from "actions/goals-actions";
 import Accordion from "components/UI/Accordion";
 
 import "css/MainArea/goals.css";
 
 function Goals(props) {
     const dispatch = useDispatch();
-    const goals = useSelector(state => state.goals).reduce((goals, goal) => {
+    const {isLoading, list} = useSelector(state => state.goals);
+
+    const goals = list.reduce((goals, goal) => {
         if (goal.frequency === "daily") {
             goals.daily.push(<GoalView goal={goal} key={goal.id} deleteGoal={() => { dispatch(deleteGoal(goal.id)) }} />);
         }
@@ -22,19 +24,20 @@ function Goals(props) {
     }, { daily: [], monthly: [], annual: [] });
 
     useEffect(() => {
-        console.log("Start loading");
-        dispatch(getGoals());
-        console.log("End loading");
-    }, [goals.daily.length, goals.monthly.length, goals.annual.length, dispatch]);
+        dispatch(fetchGoals());
+    }, [ list.length, dispatch]);
 
     return (
         <section className="goal-list">
 
+{
+
+}
             <Accordion title="Daily goals">
                 {goals.daily.length > 0 ?
                     goals.daily
                     :
-                    "Sorry, no goals available"
+                    isLoading ? "Loading": "Sorry, no goals available"
                 }
             </Accordion>
             <Accordion title="Monthly goals">
