@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import InputGroup from "components/general/InputGroup";
-import Button from "components/general/Button";
+import InputGroup from "components/UI/InputGroup";
+import Button from "components/UI/Button";
 import { useDispatch } from "react-redux";
 import { createGoal, updateGoal } from "actions/goals-actions";
 
-import "css/general/addUpdateGoal.css";
+import "css/UI/addUpdateGoal.css";
 
 function AddUpdateGoal({ currentGoal, setActive, type }) {
   const dispatch = useDispatch();

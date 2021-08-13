@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "css/general/goalView.css";
+import "css/UI/goalView.css";
 import TimeHelper from "helpers/TimeHelper";
-import Stopwatch from "components/general/Stopwatch";
-import AddUpdateGoal from "components/general/AddUpdateGoal";
-import Modal from "components/general/Modal";
+import Stopwatch from "components/UI/Stopwatch";
+import AddUpdateGoal from "components/UI/AddUpdateGoal";
+import Modal from "components/UI/Modal";
 
 function GoalView({ goal, deleteGoal, updateSpentTime }) {
     const [updateGoalViewActive, setUpdateGoalViewActive] = useState(false);

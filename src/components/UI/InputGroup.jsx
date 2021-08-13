@@ -1,5 +1,5 @@
 import React from "react";
-import "css/general/inputGroup.css";
+import "css/UI/inputGroup.css";
 
 function InputGroup({ value, setValue, type, name, rows, options }) {
     let inputField;

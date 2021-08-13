@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "css/general/accordion.css"
+import "css/UI/accordion.css"
 
 function Accordion({ title, children }) {
     const [isExpended, setIsExpended] = useState(false);

@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "components/general/Button";
+import Button from "components/UI/Button";
 import logo from "./logo.svg";
 import { logout, refresh } from "actions/user-actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import "css/header/header.css";
+import "css/Header/header.css";
 
 function Header() {
     const dispatch = useDispatch();

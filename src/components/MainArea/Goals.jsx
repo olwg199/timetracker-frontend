@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import GoalView from "components/general/GoalView";
+import GoalView from "components/UI/GoalView";
 import { useSelector, useDispatch } from "react-redux";
 import { getGoals, deleteGoal } from "actions/goals-actions";
-import Accordion from "components/general/Accordion";
+import Accordion from "components/UI/Accordion";
 
-import "css/general/goals.css";
+import "css/MainArea/goals.css";
 
 function Goals(props) {
     const dispatch = useDispatch();
@@ -22,7 +22,9 @@ function Goals(props) {
     }, { daily: [], monthly: [], annual: [] });
 
     useEffect(() => {
+        console.log("Start loading");
         dispatch(getGoals());
+        console.log("End loading");
     }, [goals.daily.length, goals.monthly.length, goals.annual.length, dispatch]);
 
     return (

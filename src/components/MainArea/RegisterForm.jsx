@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from 'components/general/Button';
-import InputGroup from "components/general/InputGroup";
+import Button from 'components/UI/Button';
+import InputGroup from "components/UI/InputGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from 'actions/user-actions';
 import { Redirect } from 'react-router-dom';

@@ -5,9 +5,9 @@ import { applyMiddleware, createStore } from "redux";
 import Reducers from "reducers";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import Modal from "components/general/Modal";
-import AddUpdateGoal from "components/general/AddUpdateGoal";
-import AddButton from "components/general/AddButton";
+import Modal from "components/UI/Modal";
+import AddUpdateGoal from "components/UI/AddUpdateGoal";
+import AddButton from "components/UI/AddButton";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
