@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import "css/Header/header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
     const dispatch = useDispatch();
@@ -20,8 +21,9 @@ function Header() {
     return (
         <header id="header">
             <div className="logo">
-                <a href="/" alt="Home page">
-                    <img src={logo} alt="Logo" /></a>
+            <Link to="/" alt="Home page">
+                    <img src={logo} alt="Logo" />
+            </Link>
             </div>
             {isAuth ?
                 <div className="login-area">

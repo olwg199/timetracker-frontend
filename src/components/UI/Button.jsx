@@ -1,7 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Button({ text, href, onClick, classList }) {
-    return <a className={classList !== undefined ? classList.join(" ") : ""} href={href} onClick={onClick}>{text}</a>
+  return (
+    <Link
+      className={classList !== undefined ? classList.join(" ") : ""}
+      to={href}
+      onClick={onClick}
+    >
+      {text}
+    </Link>
+  );
 }
 
 export default Button;
