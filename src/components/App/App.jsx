@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "components/Header";
-import MainArea from "components/MainArea";
 import { applyMiddleware, createStore } from "redux";
 import Reducers from "reducers";
 import { Provider } from "react-redux";
@@ -8,6 +6,8 @@ import { MemoryRouter as Router } from "react-router-dom";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import MainContainer from "components/UI/MainContainer/MainContainer";
+import Dashboard from "components/Dashboard/Dashboard";
+import MainContent from "components/MainContent/MainContent";
 
 const store = createStore(
   Reducers,
@@ -19,8 +19,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <MainContainer>
-          <Header />
-          <MainArea />
+          <Dashboard>
+          </Dashboard>
+          <MainContent />
         </MainContainer>
       </Router>
     </Provider>

@@ -1,12 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Goals from "./Goals";
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
+import Goals from "./Goals/Goals";
+import LoginForm from "./LoginForm/LoginForm";
+import RegisterForm from "./RegisterForm/RegisterForm";
 
-function MainArea(props) {
+import styles from "./MainContent.module.css";
+
+function MainContent(props) {
   return (
-    <section id="main-area">
+    <section className={styles.mainContent}>
       <Switch>
         <Route exact path={["/", "/timetracker-frontend"]}>
           <Goals />
@@ -22,4 +24,4 @@ function MainArea(props) {
   );
 }
 
-export default MainArea;
+export default MainContent;

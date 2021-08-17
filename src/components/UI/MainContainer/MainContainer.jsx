@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from "./MainContainer.module.css";
 
 export default function MainContainer({ children }) {
+
     return (
         <main className={styles.mainContainer}>
             <div className={`${styles.circle} ${styles.circleLB}`}></div>
