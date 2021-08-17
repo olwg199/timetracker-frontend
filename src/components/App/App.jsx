@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { MemoryRouter as Router } from "react-router-dom";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+import MainContainer from "components/UI/MainContainer/MainContainer";
 
 const store = createStore(
   Reducers,
@@ -17,10 +18,10 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="container">
+        <MainContainer>
           <Header />
           <MainArea />
-        </div>
+        </MainContainer>
       </Router>
     </Provider>
   );
