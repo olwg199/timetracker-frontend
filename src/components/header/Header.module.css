@@ -18,20 +18,16 @@ header {
   width: 150px;
 }
 
-.btn {
-  border: 1px solid silver;
-}
-
-.btn-signin:hover {
+.btnSignin:hover {
   color: white;
   background-color: rgba(0, 128, 0, 0.7);
 }
 
-.btn-signup {
+.btnSignup {
   border-left: none;
 }
 
-.btn-signup:hover {
+.btnSignup:hover {
   color: white;
   background-color: rgba(0, 0, 255, 0.5);
 }

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Modal from "components/UI/Modal";
 import AddUpdateGoal from "components/UI/AddUpdateGoal";
-import AddButton from "components/UI/AddButton";
+import Button from "components/UI/Button";
 import GoalView from "components/UI/GoalView";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchGoals, deleteGoal } from "actions/goals-actions";
 import Accordion from "components/UI/Accordion";
 
 import "css/MainArea/goals.css";
+import styles from "./Goals.module.css";
 
 function Goals(props) {
   const dispatch = useDispatch();
@@ -74,7 +75,13 @@ function Goals(props) {
         {goals.annual.length > 0 ? goals.annual : "Sorry, no goals available"}
       </Accordion>
 
-      <AddButton active={addGoalViewActive} setActive={setAddGoalViewActive} />
+      <Button
+        classList={[styles.addButton]}
+        onClick={() => setAddGoalViewActive(!addGoalViewActive)}
+        href="#"
+      >
+        <i className="fas fa-plus"></i>
+      </Button>
 
       <Modal
         active={addGoalViewActive}
