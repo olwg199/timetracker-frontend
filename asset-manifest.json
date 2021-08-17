@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/timetracker-frontend/static/css/main.d7107071.chunk.css",
-    "main.js": "/timetracker-frontend/static/js/main.674ca71e.chunk.js",
-    "main.js.map": "/timetracker-frontend/static/js/main.674ca71e.chunk.js.map",
+    "main.css": "/timetracker-frontend/static/css/main.38ff4f47.chunk.css",
+    "main.js": "/timetracker-frontend/static/js/main.e38cb0f0.chunk.js",
+    "main.js.map": "/timetracker-frontend/static/js/main.e38cb0f0.chunk.js.map",
     "runtime-main.js": "/timetracker-frontend/static/js/runtime-main.66f5728a.js",
     "runtime-main.js.map": "/timetracker-frontend/static/js/runtime-main.66f5728a.js.map",
-    "static/js/2.6eeaf89a.chunk.js": "/timetracker-frontend/static/js/2.6eeaf89a.chunk.js",
-    "static/js/2.6eeaf89a.chunk.js.map": "/timetracker-frontend/static/js/2.6eeaf89a.chunk.js.map",
+    "static/js/2.38289783.chunk.js": "/timetracker-frontend/static/js/2.38289783.chunk.js",
+    "static/js/2.38289783.chunk.js.map": "/timetracker-frontend/static/js/2.38289783.chunk.js.map",
     "index.html": "/timetracker-frontend/index.html",
-    "static/css/main.d7107071.chunk.css.map": "/timetracker-frontend/static/css/main.d7107071.chunk.css.map",
-    "static/js/2.6eeaf89a.chunk.js.LICENSE.txt": "/timetracker-frontend/static/js/2.6eeaf89a.chunk.js.LICENSE.txt",
-    "static/media/logo.38c8747e.svg": "/timetracker-frontend/static/media/logo.38c8747e.svg"
+    "static/css/main.38ff4f47.chunk.css.map": "/timetracker-frontend/static/css/main.38ff4f47.chunk.css.map",
+    "static/js/2.38289783.chunk.js.LICENSE.txt": "/timetracker-frontend/static/js/2.38289783.chunk.js.LICENSE.txt",
+    "static/media/logo.45cba6bb.svg": "/timetracker-frontend/static/media/logo.45cba6bb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.66f5728a.js",
-    "static/js/2.6eeaf89a.chunk.js",
-    "static/css/main.d7107071.chunk.css",
-    "static/js/main.674ca71e.chunk.js"
+    "static/js/2.38289783.chunk.js",
+    "static/css/main.38ff4f47.chunk.css",
+    "static/js/main.e38cb0f0.chunk.js"
   ]
 }
