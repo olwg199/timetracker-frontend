@@ -4,7 +4,7 @@ import MainArea from "components/MainArea";
 import { applyMiddleware, createStore } from "redux";
 import Reducers from "reducers";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
+import { MemoryRouter as Router } from "react-router-dom";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
