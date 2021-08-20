@@ -19,8 +19,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <MainContainer>
-          <Dashboard>
-          </Dashboard>
+          <Dashboard />
           <MainContent />
         </MainContainer>
       </Router>
